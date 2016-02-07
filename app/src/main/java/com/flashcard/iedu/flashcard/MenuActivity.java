@@ -30,7 +30,7 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     public void openJun(View v){
-        startActivity(new Intent(MenuActivity.this, JunActivityKu.class));
+        startActivity(new Intent(this, JunActivityKu.class));
     }
 
 }
