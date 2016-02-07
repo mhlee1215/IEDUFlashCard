@@ -11,6 +11,6 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         System.out.println("Hello world!");
-        System.out.println("My contribution!!");
+        System.out.println("My contribution!!!");
     }
 }
