@@ -21,7 +21,7 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_JunActivityKu" />
+    <include layout="@layout/content_junku" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
