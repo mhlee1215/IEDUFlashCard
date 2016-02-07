@@ -1,7 +1,14 @@
 package com.flashcard.iedu.flashcard;
 
-/**
- * Created by seonggeunpark on 2/7/16.
- */
-public class FrontActivity {
+import android.os.Bundle;
+import android.app.Activity;
+
+public class FrontActivity extends Activity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_front);
+    }
+
 }

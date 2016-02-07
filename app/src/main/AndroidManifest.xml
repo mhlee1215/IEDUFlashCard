@@ -18,7 +18,10 @@
         <activity
             android:name=".SignupActivity"
             android:label="@string/title_activity_signup"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".FrontActivity"
+            android:label="@string/title_activity_front"></activity>
     </application>
 
 </manifest>
