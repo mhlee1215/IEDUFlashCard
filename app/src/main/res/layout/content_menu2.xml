@@ -12,4 +12,10 @@
     tools:context="com.flashcard.iedu.flashcard.MenuActivity"
     tools:showIn="@layout/activity_menu2">
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Button"
+        android:onClick="openJun"
+        android:id="@+id/button" />
 </RelativeLayout>
