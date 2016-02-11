@@ -45,6 +45,8 @@ public class CollectionDemoActivity extends FragmentActivity {
 
 
 //Hello
+    //hihi
+
     /**
      * The {@link ViewPager} that will display the object collection.
      */
