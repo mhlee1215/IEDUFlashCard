@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.flashcard.iedu.flashcard;
+package com.flashcard.iedu.flashcard.samples.tab;
 
 import android.app.ActionBar;
 import android.content.Intent;
@@ -31,6 +31,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.flashcard.iedu.flashcard.R;
 
 public class CollectionDemoActivity extends FragmentActivity {
 

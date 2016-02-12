@@ -14,9 +14,12 @@
   limitations under the License.
   -->
 
-<ListView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@android:id/list"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp" />
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Toggles between a content view and a loading indicator view. Real-world
+         applications should automatically toggle when content becomes available. -->
+    <item android:id="@+id/action_toggle"
+        android:title="@string/action_toggle"
+        android:showAsAction="ifRoom|withText" />
+
+</menu>

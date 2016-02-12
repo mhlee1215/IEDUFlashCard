@@ -14,9 +14,8 @@
  * limitations under the License.
  */
 
-package com.flashcard.iedu.flashcard;
+package com.flashcard.iedu.flashcard.samples.tab;
 
-import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -29,6 +28,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.flashcard.iedu.flashcard.R;
 
 public class TabDemoActivity extends AppCompatActivity implements ActionBar.TabListener {
 
@@ -48,7 +49,7 @@ public class TabDemoActivity extends AppCompatActivity implements ActionBar.TabL
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_tab_main);
 
         // Create the adapter that will return a fragment for each of the three primary sections
         // of the app.
