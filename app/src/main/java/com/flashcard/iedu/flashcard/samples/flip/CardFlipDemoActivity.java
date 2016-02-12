@@ -39,7 +39,7 @@ import com.flashcard.iedu.flashcard.R;
  * front of the card out and the back of the card in. The reverse animation is played when the user
  * presses the system Back button or the "photo" action bar button.</p>
  */
-public class CardFlipActivity extends Activity
+public class CardFlipDemoActivity extends Activity
         implements FragmentManager.OnBackStackChangedListener {
     /**
      * A handler object, used for deferring UI operations.

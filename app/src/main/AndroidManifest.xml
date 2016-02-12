@@ -34,10 +34,7 @@
 
         <activity android:name=".samples.flip.MainActivity"
             android:label="@string/app_name">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
 
         <activity android:name=".samples.flip.CrossfadeActivity"
@@ -48,12 +45,16 @@
                 android:value=".samples.flip.MainActivity" />
         </activity>
 
-        <activity android:name=".samples.flip.CardFlipActivity"
+        <activity android:name=".samples.flip.CardFlipDemoActivity"
             android:label="@string/title_card_flip"
             android:parentActivityName=".samples.flip.MainActivity"
             android:theme="@style/DarkTheme">
             <meta-data android:name="android.support.PARENT_ACTIVITY"
                 android:value=".samples.flip.MainActivity" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
         <activity android:name=".samples.flip.ScreenSlideActivity"
