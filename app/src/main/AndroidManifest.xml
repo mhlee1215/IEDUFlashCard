@@ -8,8 +8,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivity">
-        </activity>
+        <activity android:name=".LoginActivity"></activity>
         <activity
             android:name=".SignupActivity"
             android:label="@string/title_activity_signup"
@@ -26,66 +25,73 @@
             android:name=".MenuActivity"
             android:label="@string/title_activity_menu"
             android:theme="@style/AppTheme.NoActionBar" />
-
-        <activity android:name=".samples.tab.TabDemoActivity" android:label="@string/app_name">
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
-        </activity>
-
-        <activity android:name=".samples.tab.CollectionDemoActivity" android:label="@string/demo_collection" />
-
-        <activity android:name=".samples.flip.MainActivity"
+        <activity
+            android:name=".samples.tab.TabDemoActivity"
             android:label="@string/app_name">
 
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
-
-        <activity android:name=".samples.flip.CrossfadeActivity"
+        <activity
+            android:name=".samples.tab.CollectionDemoActivity"
+            android:label="@string/demo_collection" />
+        <activity
+            android:name=".samples.flip.MainActivity"
+            android:label="@string/app_name"></activity>
+        <activity
+            android:name=".samples.flip.CrossfadeActivity"
             android:label="@string/title_crossfade"
-            android:uiOptions="splitActionBarWhenNarrow"
-            android:parentActivityName=".samples.flip.MainActivity">
-            <meta-data android:name="android.support.PARENT_ACTIVITY"
+            android:parentActivityName=".samples.flip.MainActivity"
+            android:uiOptions="splitActionBarWhenNarrow">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
                 android:value=".samples.flip.MainActivity" />
         </activity>
-
-        <activity android:name=".samples.flip.CardFlipDemoActivity"
+        <activity
+            android:name=".samples.flip.CardFlipDemoActivity"
             android:label="@string/title_card_flip"
             android:parentActivityName=".samples.flip.MainActivity"
             android:theme="@style/DarkTheme">
-            <meta-data android:name="android.support.PARENT_ACTIVITY"
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
                 android:value=".samples.flip.MainActivity" />
-
         </activity>
-
-        <activity android:name=".samples.flip.ScreenSlideActivity"
+        <activity
+            android:name=".samples.flip.ScreenSlideActivity"
             android:label="@string/title_screen_slide"
             android:parentActivityName=".samples.flip.MainActivity"
             android:uiOptions="splitActionBarWhenNarrow">
-            <meta-data android:name="android.support.PARENT_ACTIVITY"
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
                 android:value=".samples.flip.MainActivity" />
         </activity>
-
-        <activity android:name=".samples.flip.ZoomActivity"
+        <activity
+            android:name=".samples.flip.ZoomActivity"
             android:label="@string/title_zoom"
             android:parentActivityName=".samples.flip.MainActivity">
-            <meta-data android:name="android.support.PARENT_ACTIVITY"
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
                 android:value=".samples.flip.MainActivity" />
         </activity>
-
-        <activity android:name=".samples.flip.LayoutChangesActivity"
+        <activity
+            android:name=".samples.flip.LayoutChangesActivity"
             android:label="@string/title_layout_changes"
-            android:parentActivityName=".samples.flip.MainActivity">>
-            <meta-data android:name="android.support.PARENT_ACTIVITY"
+            android:parentActivityName=".samples.flip.MainActivity">
+            >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
                 android:value=".samples.flip.MainActivity" />
         </activity>
-
         <activity android:name=".samples.list.MyFragmentActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".WordBookActivity"></activity>
     </application>
 
 </manifest>
