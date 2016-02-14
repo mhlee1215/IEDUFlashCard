@@ -28,6 +28,10 @@
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity android:name=".samples.tab.TabDemoActivity" android:label="@string/app_name">
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
         </activity>
 
         <activity android:name=".samples.tab.CollectionDemoActivity" android:label="@string/demo_collection" />
@@ -51,10 +55,7 @@
             android:theme="@style/DarkTheme">
             <meta-data android:name="android.support.PARENT_ACTIVITY"
                 android:value=".samples.flip.MainActivity" />
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
 
         <activity android:name=".samples.flip.ScreenSlideActivity"
@@ -77,6 +78,13 @@
             android:parentActivityName=".samples.flip.MainActivity">>
             <meta-data android:name="android.support.PARENT_ACTIVITY"
                 android:value=".samples.flip.MainActivity" />
+        </activity>
+
+        <activity android:name=".samples.list.MyFragmentActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
