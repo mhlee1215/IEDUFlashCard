@@ -28,7 +28,7 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
     }
-
+//test test
     public void openJun(View v){
         startActivity(new Intent(this, JunActivityKu.class));
     }
