@@ -15,7 +15,20 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/fragment_container"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" />
+    android:layout_height="match_parent" >
+
+    <FrameLayout android:name="com.flashcard.iedu.flashcard.samples.list.HeadlinesFragment"
+        android:id="@+id/fragment_container"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
+
+    <FrameLayout android:name="com.flashcard.iedu.flashcard.samples.list.HeadlinesFragment"
+        android:id="@+id/fragment_container2"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
+</LinearLayout>

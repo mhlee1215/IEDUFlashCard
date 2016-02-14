@@ -28,6 +28,7 @@ public class MyFragmentActivity extends FragmentActivity implements HeadlinesFra
 
             // Create a new Fragment to be placed in the activity layout
             HeadlinesFragment firstFragment = new HeadlinesFragment();
+            firstFragment.setContainerIndex(1);
 
             // In case this activity was started with special instructions from an
             // Intent, pass the Intent's extras to the fragment as arguments
@@ -36,10 +37,22 @@ public class MyFragmentActivity extends FragmentActivity implements HeadlinesFra
             // Add the fragment to the 'fragment_container' FrameLayout
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.fragment_container, firstFragment).commit();
+
+            // Create a new Fragment to be placed in the activity layout
+            HeadlinesFragment firstFragment2 = new HeadlinesFragment();
+            firstFragment2.setContainerIndex(2);
+
+            // In case this activity was started with special instructions from an
+            // Intent, pass the Intent's extras to the fragment as arguments
+            firstFragment2.setArguments(getIntent().getExtras());
+
+            // Add the fragment to the 'fragment_container' FrameLayout
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.fragment_container2, firstFragment2).commit();
         }
     }
 
-    public void onArticleSelected(int position) {
+    public void onArticleSelected(int position, int container) {
         // The user selected the headline of an article from the HeadlinesFragment
         // Do something here to display that article
 
@@ -64,7 +77,11 @@ public class MyFragmentActivity extends FragmentActivity implements HeadlinesFra
 
             // Replace whatever is in the fragment_container view with this fragment,
             // and add the transaction to the back stack so the user can navigate back
-            transaction.replace(R.id.fragment_container, newFragment);
+            if(container == 1)
+                transaction.replace(R.id.fragment_container, newFragment);
+            else if(container == 2)
+                transaction.replace(R.id.fragment_container2, newFragment);
+
             transaction.addToBackStack(null);
 
             // Commit the transaction
