@@ -38,17 +38,17 @@ public class MyFragmentActivity extends FragmentActivity implements HeadlinesFra
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.fragment_container, firstFragment).commit();
 
-            // Create a new Fragment to be placed in the activity layout
-            HeadlinesFragment firstFragment2 = new HeadlinesFragment();
-            firstFragment2.setContainerIndex(2);
-
-            // In case this activity was started with special instructions from an
-            // Intent, pass the Intent's extras to the fragment as arguments
-            firstFragment2.setArguments(getIntent().getExtras());
-
-            // Add the fragment to the 'fragment_container' FrameLayout
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.fragment_container2, firstFragment2).commit();
+//            // Create a new Fragment to be placed in the activity layout
+//            HeadlinesFragment firstFragment2 = new HeadlinesFragment();
+//            firstFragment2.setContainerIndex(2);
+//
+//            // In case this activity was started with special instructions from an
+//            // Intent, pass the Intent's extras to the fragment as arguments
+//            firstFragment2.setArguments(getIntent().getExtras());
+//
+//            // Add the fragment to the 'fragment_container' FrameLayout
+//            getSupportFragmentManager().beginTransaction()
+//                    .add(R.id.fragment_container2, firstFragment2).commit();
         }
     }
 

@@ -3,6 +3,10 @@ package com.flashcard.iedu.flashcard;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+/**
+ * VIEW_8
+ */
+
 public class MatchActivity extends AppCompatActivity {
 
     @Override

@@ -2,19 +2,16 @@ package com.flashcard.iedu.flashcard;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 
-public class FrontActivity extends AppCompatActivity {
+/**
+ * VIEW_7
+ *
+ */
+public class WordActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_front);
+        setContentView(R.layout.activity_voca);
     }
-
-    public void sendMessage (View view) {
-        System.out.println("Hello button");
-
-    }
-
 }

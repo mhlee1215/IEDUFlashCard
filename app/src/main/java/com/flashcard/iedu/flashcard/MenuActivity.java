@@ -10,6 +10,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
+/**
+ * VIEW_4
+ */
+
 public class MenuActivity extends AppCompatActivity {
 
     @Override
@@ -29,8 +33,8 @@ public class MenuActivity extends AppCompatActivity {
         });
     }
 //test test
-    public void openJun(View v){
-        startActivity(new Intent(this, JunActivityKu.class));
-    }
+//    public void openJun(View v){
+  //      startActivity(new Intent(this, JunActivityKu.class));
+   // }
 
 }

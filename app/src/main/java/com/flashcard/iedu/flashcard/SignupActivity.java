@@ -7,6 +7,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
+/**
+ * VIEW_3
+ */
+
 public class SignupActivity extends AppCompatActivity {
 
     @Override
