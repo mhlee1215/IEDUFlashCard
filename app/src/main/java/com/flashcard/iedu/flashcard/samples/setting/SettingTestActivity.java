@@ -1,6 +1,8 @@
 package com.flashcard.iedu.flashcard.samples.setting;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,9 +18,22 @@ public class SettingTestActivity extends AppCompatActivity {
 
     }
 
-    private void sendMessage(View view){
-        //Intent intent = new Intent(this, AppPreferences.class);
-        //startActivity(intent);
-        System.out.println("hi");
+    public void sendMessage(View view){
+        Intent intent = new Intent(this, AppPreferences.class);
+        startActivity(intent);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        System.out.println("on resume");
+
+        SharedPreferences SP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+
+        String strUserName = SP.getString("username", "NA");
+        boolean bAppUpdates = SP.getBoolean("applicationUpdates",false);
+        String downloadType = SP.getString("downloadType","1");
+
+        System.out.println(strUserName+", "+bAppUpdates+", "+downloadType);
     }
 }
