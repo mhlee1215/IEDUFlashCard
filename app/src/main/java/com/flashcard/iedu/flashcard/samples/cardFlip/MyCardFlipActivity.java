@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.flashcard.iedu.flashcard.samples.flip;
+package com.flashcard.iedu.flashcard.samples.cardFlip;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -23,13 +23,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.NavUtils;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.flashcard.iedu.flashcard.R;
+import com.flashcard.iedu.flashcard.samples.flip.MainActivity;
 
 /**
  * Demonstrates a "card-flip" animation using custom fragment transactions ({@link
@@ -39,8 +42,17 @@ import com.flashcard.iedu.flashcard.R;
  * front of the card out and the back of the card in. The reverse animation is played when the user
  * presses the system Back button or the "photo" action bar button.</p>
  */
-public class CardFlipDemoActivity extends Activity
+public class MyCardFlipActivity extends AppCompatActivity
         implements FragmentManager.OnBackStackChangedListener {
+
+    public static final String ARG_CARD_TITLE = "CARD_TITLE";
+    public static final String ARG_CARD_SUB_TITLE = "CARD_SUB_TITLE";
+
+    String frontTitle = "Front title";
+    String frontSubTitle = "Front Sub title";
+    String backTitle = "Back title";
+    String backSubTitle = "Back Sub title";
+
     /**
      * A handler object, used for deferring UI operations.
      */
@@ -60,9 +72,16 @@ public class CardFlipDemoActivity extends Activity
             // If there is no saved instance state, add a fragment representing the
             // front of the card to this activity. If there is saved instance state,
             // this fragment will have already been added to the activity.
+
+            Bundle args = new Bundle();
+            args.putString(MyCardFlipActivity.ARG_CARD_TITLE, frontTitle);
+            args.putString(MyCardFlipActivity.ARG_CARD_SUB_TITLE, frontSubTitle);
+            CardFrontFragment frontFragment = new CardFrontFragment();
+            frontFragment.setArguments(args);
+
             getFragmentManager()
                     .beginTransaction()
-                    .add(R.id.container, new CardFrontFragment())
+                    .add(R.id.container, frontFragment)
                     .commit();
         } else {
             mShowingBack = (getFragmentManager().getBackStackEntryCount() > 0);
@@ -83,9 +102,9 @@ public class CardFlipDemoActivity extends Activity
                 mShowingBack
                         ? R.string.action_photo
                         : R.string.action_info);
-        item.setIcon(mShowingBack
-                ? R.drawable.ic_action_photo
-                : R.drawable.ic_action_info);
+//        item.setIcon(mShowingBack
+//                ? R.drawable.ic_action_photo
+//                : R.drawable.ic_action_info);
         item.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
         return true;
     }
@@ -97,6 +116,7 @@ public class CardFlipDemoActivity extends Activity
                 // Navigate "up" the demo structure to the launchpad activity.
                 // See http://developer.android.com/design/patterns/navigation.html for more.
                 NavUtils.navigateUpTo(this, new Intent(this, MainActivity.class));
+
                 return true;
 
             case R.id.action_flip:
@@ -120,6 +140,12 @@ public class CardFlipDemoActivity extends Activity
         // Create and commit a new fragment transaction that adds the fragment for the back of
         // the card, uses custom animations, and is part of the fragment manager's back stack.
 
+        Bundle args = new Bundle();
+        args.putString(MyCardFlipActivity.ARG_CARD_TITLE, backTitle);
+        args.putString(MyCardFlipActivity.ARG_CARD_SUB_TITLE, backSubTitle);
+        CardBackFragment backFragment = new CardBackFragment();
+        backFragment.setArguments(args);
+
         getFragmentManager()
                 .beginTransaction()
 
@@ -129,12 +155,13 @@ public class CardFlipDemoActivity extends Activity
                 // the system Back button is pressed).
                 .setCustomAnimations(
                         R.animator.card_flip_right_in, R.animator.card_flip_right_out,
-                        R.animator.card_flip_left_in, R.animator.card_flip_left_out)
+                        R.animator.card_flip_left_in, R.animator.card_flip_left_out
+                )
 
                 // Replace any fragments currently in the container view with a fragment
                 // representing the next page (indicated by the just-incremented currentPage
                 // variable).
-                .replace(R.id.container, new CardBackFragment())
+                .replace(R.id.container, backFragment)
 
                 // Add this transaction to the back stack, allowing users to press Back
                 // to get to the front of the card.
@@ -166,6 +193,8 @@ public class CardFlipDemoActivity extends Activity
      * A fragment representing the front of the card.
      */
     public static class CardFrontFragment extends Fragment {
+
+
         public CardFrontFragment() {
         }
 
@@ -174,12 +203,32 @@ public class CardFlipDemoActivity extends Activity
                 Bundle savedInstanceState) {
             return inflater.inflate(R.layout.fragment_card_front, container, false);
         }
+
+
+        @Override
+        public void onStart() {
+            super.onStart();
+
+
+
+            Bundle args = getArguments();
+            ((TextView) getActivity().findViewById(R.id.title)).setText(
+                    args.getString(MyCardFlipActivity.ARG_CARD_TITLE));
+            ((TextView) getActivity().findViewById(R.id.subtitle)).setText(
+                    args.getString(MyCardFlipActivity.ARG_CARD_SUB_TITLE));
+
+//            TextView frontTitleView = (TextView)getActivity().findViewById(R.id.title);
+//            frontTitleView.setText(title);
+//            TextView frontSubTitleView = (TextView)getActivity().findViewById(R.id.subtitle);
+//            frontSubTitleView.setText(subTitle);
+        }
     }
 
     /**
      * A fragment representing the back of the card.
      */
     public static class CardBackFragment extends Fragment {
+
         public CardBackFragment() {
         }
 
@@ -192,7 +241,11 @@ public class CardFlipDemoActivity extends Activity
         @Override
         public void onStart() {
             super.onStart();
-
+            Bundle args = getArguments();
+            ((TextView) getActivity().findViewById(R.id.title)).setText(
+                    args.getString(MyCardFlipActivity.ARG_CARD_TITLE));
+            ((TextView) getActivity().findViewById(R.id.subtitle)).setText(
+                    args.getString(MyCardFlipActivity.ARG_CARD_SUB_TITLE));
         }
     }
 }
