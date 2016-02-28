@@ -137,7 +137,7 @@ public class TabDemoActivity extends AppCompatActivity implements ActionBar.TabL
 
         @Override
         public int getCount() {
-            return 3;
+            return 5;
         }
 
         @Override

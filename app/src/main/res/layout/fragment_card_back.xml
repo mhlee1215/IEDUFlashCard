@@ -22,7 +22,8 @@
     android:padding="16dp"
     android:gravity="bottom">
 
-    <TextView android:id="@android:id/text1"
+    <TextView
+        android:id="@+id/title"
         style="?android:textAppearanceLarge"
         android:textStyle="bold"
         android:textColor="#fff"
@@ -30,7 +31,9 @@
         android:layout_height="wrap_content"
         android:text="@string/card_back_title" />
 
-    <TextView style="?android:textAppearanceSmall"
+    <TextView
+        android:id="@+id/subtitle"
+        style="?android:textAppearanceSmall"
         android:textAllCaps="true"
         android:textColor="#80ffffff"
         android:textStyle="bold"
