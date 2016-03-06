@@ -23,9 +23,9 @@ android {
 //        targetCompatibility JavaVersion.VERSION_1_8
 //    }
 
-    defaultConfig {
-        multiDexEnabled true
-    }
+//    defaultConfig {
+//        multiDexEnabled true
+//    }
 }
 
 dependencies {
@@ -37,7 +37,4 @@ dependencies {
     compile 'com.android.support:support-v13:23.2.0'
     compile 'com.android.support:support-v4:23.2.0'
     compile 'com.android.support:recyclerview-v7:23.2.0'
-    //compile files('libs/gson-2.2.2.jar')
-//    compile files('libs/iedu_flashcard_service.jar')
-//    compile files('libs/iedu_flashcard_core.jar')
 }
