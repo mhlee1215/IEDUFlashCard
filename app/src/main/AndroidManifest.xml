@@ -17,7 +17,6 @@
             android:name=".MenuActivity"
             android:label="@string/title_activity_menu"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".samples.tab.CollectionDemoActivity"
             android:label="@string/demo_collection" />
@@ -41,7 +40,6 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".samples.flip.MainActivity" />
-
         </activity>
         <activity
             android:name=".samples.flip.ScreenSlideActivity"
@@ -69,40 +67,36 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".samples.flip.MainActivity" />
         </activity>
-
         <activity android:name=".WordBookActivity" />
         <activity android:name=".WordBookListctivity" />
         <activity android:name=".WordActivity" />
         <activity android:name=".MatchActivity" />
         <activity android:name=".SettingActivity" />
         <activity android:name=".samples.setting.AppPreferences" />
-        <activity android:name=".samples.fragmentList.MyFragmentListActivity">
+        <activity android:name=".samples.fragmentList.MyFragmentListActivity"></activity>
 
-        </activity>
+        <!-- Example Setting -->
+        <activity android:name=".samples.setting.SettingTestActivity"></activity>
 
+        <!-- Example List -->
+        <activity android:name=".samples.list.MyFragmentActivity"></activity>
 
-        <!--Example Setting -->
-        <activity android:name=".samples.setting.SettingTestActivity" >
-        </activity>
+        <!-- Example Fragment -->
+        <activity android:name=".samples.fragment.MyFragmentTest"></activity>
 
-        <!--Example List -->
-        <activity android:name=".samples.list.MyFragmentActivity" >
-        </activity>
+        <!-- Example CardFlip -->
+        <activity android:name=".samples.cardFlip.MyCardFlipActivity"></activity>
 
-        <!--Example Fragment -->
-        <activity android:name=".samples.fragment.MyFragmentTest">
-        </activity>
-
-        <!--Example CardFlip -->
-        <activity android:name=".samples.cardFlip.MyCardFlipActivity">
-        </activity>
-
-        <!--Example Tab -->
+        <!-- Example Tab -->
         <activity
             android:name=".samples.tab.TabDemoActivity"
             android:label="@string/app_name">
+
+        </activity>
+        <activity android:name=".samples.serverConn.ServiceTestActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

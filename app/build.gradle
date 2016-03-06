@@ -17,15 +17,19 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    android.sourceSets {
-        main.res.srcDirs = ['src/main/res/layouts/flip',
-                            'src/main/res/layouts',
-                            'src/main/res']
+
+//    compileOptions {
+//        sourceCompatibility JavaVersion.VERSION_1_8
+//        targetCompatibility JavaVersion.VERSION_1_8
+//    }
+
+    defaultConfig {
+        multiDexEnabled true
     }
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.android.support:appcompat-v7:23.2.0'
@@ -33,4 +37,7 @@ dependencies {
     compile 'com.android.support:support-v13:23.2.0'
     compile 'com.android.support:support-v4:23.2.0'
     compile 'com.android.support:recyclerview-v7:23.2.0'
+    //compile files('libs/gson-2.2.2.jar')
+//    compile files('libs/iedu_flashcard_service.jar')
+//    compile files('libs/iedu_flashcard_core.jar')
 }
