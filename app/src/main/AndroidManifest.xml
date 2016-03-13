@@ -76,27 +76,29 @@
         <activity android:name=".MatchActivity" />
         <activity android:name=".SettingActivity" />
         <activity android:name=".samples.setting.AppPreferences" />
-        <activity android:name=".samples.fragmentList.MyFragmentListActivity"></activity>
+        <activity android:name=".samples.fragmentList.MyFragmentListActivity" />
 
         <!-- Example Setting -->
-        <activity android:name=".samples.setting.SettingTestActivity"></activity>
+        <activity android:name=".samples.setting.SettingTestActivity" />
 
         <!-- Example List -->
-        <activity android:name=".samples.list.MyFragmentActivity"></activity>
+        <activity android:name=".samples.list.MyFragmentActivity" />
 
         <!-- Example Fragment -->
-        <activity android:name=".samples.fragment.MyFragmentTest"></activity>
+        <activity android:name=".samples.fragment.MyFragmentTest" />
 
         <!-- Example CardFlip -->
-        <activity android:name=".samples.cardFlip.MyCardFlipActivity"></activity>
+        <activity android:name=".samples.cardFlip.MyCardFlipActivity" />
 
         <!-- Example Tab -->
         <activity
             android:name=".samples.tab.TabDemoActivity"
-            android:label="@string/app_name">
+            android:label="@string/app_name" />
+        <activity android:name=".samples.serverConn.ServiceTestActivity"></activity>
+        <activity android:name=".samples.dynamic_list.ListViewDemo">
 
         </activity>
-        <activity android:name=".samples.serverConn.ServiceTestActivity">
+        <activity android:name=".samples.customized_list.CustomizedListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
