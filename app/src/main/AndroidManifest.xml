@@ -93,18 +93,17 @@
         <!-- Example Tab -->
         <activity
             android:name=".samples.tab.TabDemoActivity"
-            android:label="@string/app_name"></activity>
-        <activity android:name=".samples.serverConn.ServiceTestActivity">
-
-        </activity>
+            android:label="@string/app_name" />
+        <activity android:name=".samples.serverConn.ServiceTestActivity"></activity>
         <activity android:name=".samples.dynamic_list.ListViewDemo">
 
+        </activity>
+        <activity android:name=".samples.customized_list.CustomizedListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
     </application>
 
