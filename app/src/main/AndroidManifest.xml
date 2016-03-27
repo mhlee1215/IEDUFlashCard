@@ -71,7 +71,15 @@
                 android:value=".samples.flip.MainActivity" />
         </activity>
         <activity android:name=".WordBookActivity" />
-        <activity android:name=".WordBookListctivity" />
+        <activity android:name=".WordBookListActivity" >
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
         <activity android:name=".WordActivity" />
         <activity android:name=".MatchActivity" />
         <activity android:name=".SettingActivity" />
@@ -96,15 +104,8 @@
             android:label="@string/app_name" />
         <activity android:name=".samples.serverConn.ServiceTestActivity" />
         <activity android:name=".samples.dynamic_list.ListViewDemo"></activity>
-        <activity android:name=".samples.customized_list.CustomizedListActivity">
 
-        </activity>
         <activity android:name=".samples.card_list.CardListMainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

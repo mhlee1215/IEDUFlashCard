@@ -1,4 +1,4 @@
-package com.flashcard.iedu.flashcard.samples.customized_list;
+package com.flashcard.iedu.flashcard;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -16,19 +16,17 @@ import java.util.List;
 /**
  * Created by mhlee on 3/13/16.
  */
-public class CustomizedAdapter extends BaseAdapter {
+public class WordBookListAdapter extends BaseAdapter {
 
     Context context = null;
     List<String> mainColumn;
     List<String> subColumn1;
-    List<String> subColumn2;
     private static LayoutInflater inflater=null;
 
-    public CustomizedAdapter(Context context, List<String> main, List<String> sub1, List<String> sub2){
+    public WordBookListAdapter(Context context, List<String> main, List<String> sub1){
         this.context = context;
         this.mainColumn = main;
         this.subColumn1 = sub1;
-        this.subColumn2 = sub2;
         inflater = ( LayoutInflater )context.
                 getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
@@ -52,13 +50,11 @@ public class CustomizedAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
 
         View rowView;
-        rowView = inflater.inflate(R.layout.activity_customized_list_item, null);
+        rowView = inflater.inflate(R.layout.activity_wordbook_list_item, null);
         TextView viewMain =(TextView) rowView.findViewById(R.id.textViewMain);
         TextView viewSub1 =(TextView) rowView.findViewById(R.id.textViewSub1);
-        TextView viewSub2 =(TextView) rowView.findViewById(R.id.textViewSub2);
         viewMain.setText(this.mainColumn.get(position));
         viewSub1.setText(this.subColumn1.get(position));
-        viewSub2.setText(this.subColumn2.get(position));
 
 
         rowView.setOnClickListener(new OnClickListener() {
