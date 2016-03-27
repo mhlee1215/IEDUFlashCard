@@ -1,4 +1,4 @@
-package com.flashcard.iedu.flashcard.samples.card_list;
+package com.flashcard.iedu.flashcard.samples.slideViewer;
 
 import android.content.Context;
 import android.support.v4.view.ViewPager;
@@ -32,7 +32,7 @@ public class VerticalViewPager extends ViewPager {
         setOverScrollMode(OVER_SCROLL_NEVER);
     }
 
-    private class VerticalPageTransformer implements ViewPager.PageTransformer {
+    private class VerticalPageTransformer implements PageTransformer {
 
         @Override
         public void transformPage(View view, float position) {

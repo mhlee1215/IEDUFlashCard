@@ -51,7 +51,7 @@
         android:layout_above="@+id/textViewWordNumber"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/SaveButtonTopPadding"
-        android:visibility="invisible" >
+        android:visibility="visible" >
 
         <ImageButton
             android:id="@+id/imageButtonCancel"

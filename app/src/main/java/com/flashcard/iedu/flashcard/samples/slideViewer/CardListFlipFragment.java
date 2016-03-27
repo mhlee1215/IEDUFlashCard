@@ -52,64 +52,64 @@ public class CardListFlipFragment extends Fragment
     /**
      * A fragment representing the front of the card.
      */
-    public static class CardFrontFragment extends Fragment {
-
-
-        public CardFrontFragment() {
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View view = inflater.inflate(R.layout.activity_card_list_fragment_card_front, container, false);
-
-            return view;
-        }
-
-
-        @Override
-        public void onStart() {
-            super.onStart();
-
-
-
-            Bundle args = getArguments();
-            ((TextView) getActivity().findViewById(R.id.title)).setText(
-                    args.getString(CardListFlipFragment.ARG_CARD_TITLE));
-            ((TextView) getActivity().findViewById(R.id.subtitle)).setText(
-                    args.getString(com.flashcard.iedu.flashcard.samples.card_list.CardListFlipFragment.ARG_CARD_SUB_TITLE));
-
-//            TextView frontTitleView = (TextView)getActivity().findViewById(R.id.title);
-//            frontTitleView.setText(title);
-//            TextView frontSubTitleView = (TextView)getActivity().findViewById(R.id.subtitle);
-//            frontSubTitleView.setText(subTitle);
-        }
-    }
-
-    /**
-     * A fragment representing the back of the card.
-     */
-    public static class CardBackFragment extends Fragment {
-
-        public CardBackFragment() {
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            return inflater.inflate(R.layout.activity_card_list_fragment_card_back, container, false);
-        }
-
-        @Override
-        public void onStart() {
-            super.onStart();
-            Bundle args = getArguments();
-            ((TextView) getActivity().findViewById(R.id.title)).setText(
-                    args.getString(com.flashcard.iedu.flashcard.samples.card_list.CardListFlipFragment.ARG_CARD_TITLE));
-            ((TextView) getActivity().findViewById(R.id.subtitle)).setText(
-                    args.getString(com.flashcard.iedu.flashcard.samples.card_list.CardListFlipFragment.ARG_CARD_SUB_TITLE));
-
-        }
-    }
+//    public static class CardFrontFragment extends Fragment {
+//
+//
+//        public CardFrontFragment() {
+//        }
+//
+//        @Override
+//        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+//                                 Bundle savedInstanceState) {
+//            View view = inflater.inflate(R.layout.activity_card_list_fragment_card_front, container, false);
+//
+//            return view;
+//        }
+//
+//
+//        @Override
+//        public void onStart() {
+//            super.onStart();
+//
+//
+//
+//            Bundle args = getArguments();
+//            ((TextView) getActivity().findViewById(R.id.title)).setText(
+//                    args.getString(CardListFlipFragment.ARG_CARD_TITLE));
+//            ((TextView) getActivity().findViewById(R.id.subtitle)).setText(
+//                    args.getString(com.flashcard.iedu.flashcard.samples.card_list.CardListFlipFragment.ARG_CARD_SUB_TITLE));
+//
+////            TextView frontTitleView = (TextView)getActivity().findViewById(R.id.title);
+////            frontTitleView.setText(title);
+////            TextView frontSubTitleView = (TextView)getActivity().findViewById(R.id.subtitle);
+////            frontSubTitleView.setText(subTitle);
+//        }
+//    }
+//
+//    /**
+//     * A fragment representing the back of the card.
+//     */
+//    public static class CardBackFragment extends Fragment {
+//
+//        public CardBackFragment() {
+//        }
+//
+//        @Override
+//        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+//                                 Bundle savedInstanceState) {
+//            return inflater.inflate(R.layout.activity_card_list_fragment_card_back, container, false);
+//        }
+//
+//        @Override
+//        public void onStart() {
+//            super.onStart();
+//            Bundle args = getArguments();
+//            ((TextView) getActivity().findViewById(R.id.title)).setText(
+//                    args.getString(com.flashcard.iedu.flashcard.samples.card_list.CardListFlipFragment.ARG_CARD_TITLE));
+//            ((TextView) getActivity().findViewById(R.id.subtitle)).setText(
+//                    args.getString(com.flashcard.iedu.flashcard.samples.card_list.CardListFlipFragment.ARG_CARD_SUB_TITLE));
+//
+//        }
+//    }
 
 }

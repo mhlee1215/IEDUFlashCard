@@ -9,16 +9,13 @@ import android.os.Bundle;
 
 import com.flashcard.iedu.flashcard.R;
 import com.flashcard.iedu.flashcard.samples.fragment.MyFragmentOne;
+import com.flashcard.iedu.flashcard.samples.slideViewer.DepthPageTransformer;
 import com.flashcard.iedu.flashcard.samples.slideViewer.ZoomOutPageTransformer;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class CardListMainActivity extends AppCompatActivity {
-
-//    ListView lv;
-//    Context context;
-
 
     ViewPager mViewPager;
     CardListPagerAdapter cardListPagerAdapter;
@@ -43,8 +40,11 @@ public class CardListMainActivity extends AppCompatActivity {
 
         mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setAdapter(cardListPagerAdapter);
-        mViewPager.setPageTransformer(true, new ZoomOutPageTransformer());
+        //mViewPager.setPageTransformer(true, new ZoomOutPageTransformer());
+        mViewPager.setPageTransformer(true, new DepthPageTransformer());
+
     }
+
 
     /**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to one of the primary
@@ -70,28 +70,12 @@ public class CardListMainActivity extends AppCompatActivity {
         @Override
         public Fragment getItem(int i) {
 
-                    // The other sections of the app are dummy placeholders.
-//            Bundle args = new Bundle();
-//            args.putString(CardListMainActivity.ARG_CARD_TITLE, word.get(i));
-//            args.putString(CardListMainActivity.ARG_CARD_SUB_TITLE, "");
-//            Fragment fragment = new CardFrontFragment();
-//            fragment.setArguments(args);
-
-//            Bundle args = new Bundle();
-//            args.put
-
-
-//            private final static String CARD_QUESTION = "q";
-//            private final static String CARD_ANSWER = "a";
-//            private final static String MAX_KEY = "m";
-//            private final static String CARD_POSITION_KEY = "p";
-
             Bundle args = new Bundle();
             args.putString(CardFragment.CARD_QUESTION, word.get(i));
             args.putString(CardFragment.CARD_ANSWER, meaning.get(i));
             args.putInt(CardFragment.CARD_POSITION_KEY, i);
-            //args.putInt(CardFragment.MAX_KEY, 10);
-            Fragment fragment = CardFragment.newInstance(i, getCount(), 20);
+            args.putInt(CardFragment.MAX_KEY, getCount());
+            Fragment fragment = CardFragment.newInstance(i, getCount(), 40);
             fragment.setArguments(args);
             //Fragment fragment = new MyFragmentOne();
             return fragment;

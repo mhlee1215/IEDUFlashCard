@@ -19,7 +19,11 @@ import android.widget.Toast;
 
 import com.flashcard.iedu.flashcard.R;
 
-public class CardFragment extends Fragment implements AppConstants {
+public class CardFragment extends Fragment {
+
+	public static final String _OF_ = " of ";
+	public static final String BACK = " Back";
+	public static final String FRONT = " Front";
 
 	public final static String CARD_QUESTION = "q";
 	public final static String CARD_ANSWER = "a";
@@ -101,84 +105,23 @@ public class CardFragment extends Fragment implements AppConstants {
 		mLinearLayoutEditButtons = (LinearLayout)mCardView.findViewById(R.id.linearLayoutEditButtons);
 
 		mImageButtonSave = (ImageButton)mCardView.findViewById(R.id.imageButtonSave);
-//		mImageButtonSave.setOnClickListener(new OnClickListener() {
-//
-//			public void onClick(View v) {
-//
-//				/*
-//				 * General input validation
-//				 */
-//				if(!isValid(mEditTextWord.getText().toString().trim())) {
-//
-//					return;
-//				}
-//
-//				/*
-//				 * User has to enter non empty string for front of card
-//				 */
-//				String editText = mEditTextWord.getText().toString();
-//				if(!mWordToggle && (null == editText || "".equals(editText))) {
-//
-//					Toast.makeText(getActivity().getApplicationContext(), R.string.input_validation_warning2, Toast.LENGTH_SHORT).show();
-//					return;
-//				}
-//
-//				mEditTextWord.setVisibility(View.INVISIBLE);
-//				mLinearLayoutEditButtons.setVisibility(View.INVISIBLE);
-//
-//				/*
-//				 * Check if the user changed anything, and only update if there is a change
-//				 */
-//				if(!mWordToggle && !mEditTextWord.getText().toString().equals(mTextViewQuestion.getText().toString())) {
-//
-//					mTextViewQuestion.setText(mEditTextWord.getText());
-//					mTextViewQuestion.setVisibility(View.VISIBLE);
-////					Card updatedCard = new Card();
-////					updatedCard.setRandomCardIndex(mCardPosition);
-////					updatedCard.setQuestion(mEditTextWord.getText().toString());
-////					updatedCard.setAnswer(mTextViewAnswer.getText().toString());
-////					((MainApplication)getActivity().getApplication()).doAction(ACTION_UPDATE_CARD, updatedCard);
-//				}
-//				else if(mWordToggle && !mEditTextWord.getText().toString().equals(mTextViewAnswer.getText().toString())) {
-//
-//					mTextViewAnswer.setText(mEditTextWord.getText());
-//					mTextViewAnswer.setVisibility(View.VISIBLE);
-////					Card updatedCard = new Card();
-////					updatedCard.setRandomCardIndex(mCardPosition);
-////					updatedCard.setQuestion(mTextViewQuestion.getText().toString());
-////					updatedCard.setAnswer(mEditTextWord.getText().toString());
-////					((MainApplication)getActivity().getApplication()).doAction(ACTION_UPDATE_CARD, updatedCard);
-//				}
-//				else if(!mWordToggle) {
-//
-//					mTextViewQuestion.setVisibility(View.VISIBLE);
-//				}
-//				else if(mWordToggle) {
-//
-//					mTextViewAnswer.setVisibility(View.VISIBLE);
-//				}
-//			}
-//		});
+		mImageButtonSave.setOnClickListener(new OnClickListener() {
+
+			public void onClick(View v) {
+
+				Toast.makeText(getActivity().getApplicationContext(), "save clicked", Toast.LENGTH_SHORT).show();
+
+			}
+		});
 
 		mImageButtonCancel = (ImageButton)mCardView.findViewById(R.id.imageButtonCancel);
-//		mImageButtonCancel.setOnClickListener(new OnClickListener() {
-//
-//			public void onClick(View v) {
-//
-//				mEditTextWord.setVisibility(View.INVISIBLE);
-//
-//				if(mWordToggle) {
-//
-//					mTextViewAnswer.setVisibility(View.VISIBLE);
-//				}
-//				else {
-//
-//					mTextViewQuestion.setVisibility(View.VISIBLE);
-//				}
-//
-//				mLinearLayoutEditButtons.setVisibility(View.INVISIBLE);
-//			}
-//		});
+		mImageButtonCancel.setOnClickListener(new OnClickListener() {
+
+			public void onClick(View v) {
+
+				Toast.makeText(getActivity().getApplicationContext(), "cancel clicked", Toast.LENGTH_SHORT).show();
+			}
+		});
 		
 		// Set the bottom word counter
 		mCounterTextView = (TextView) mCardView.findViewById(R.id.textViewWordNumber);
@@ -273,16 +216,5 @@ public class CardFragment extends Fragment implements AppConstants {
 		});
 		
 		view.startAnimation(flip1);
-	}
-	
-	private boolean isValid(String input) {
-		
-		if(null == input) {
-			
-			Toast.makeText(getActivity().getApplicationContext(), R.string.input_validation_warning, Toast.LENGTH_SHORT).show();
-			return false;
-		}
-		
-		return true;
 	}
 }

@@ -18,7 +18,7 @@
         android:textStyle="bold"
         android:text="MyCustom Card View" />
 
-    <!--<com.flashcard.iedu.flashcard.samples.card_list.VerticalViewPager-->
+    <!--<com.flashcard.iedu.flashcard.samples.slideViewer.VerticalViewPager-->
         <!--android:id="@+id/pager"-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="match_parent" />-->
