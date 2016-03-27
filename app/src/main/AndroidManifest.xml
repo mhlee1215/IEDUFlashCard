@@ -99,7 +99,7 @@
         <activity android:name=".samples.customized_list.CustomizedListActivity">
 
         </activity>
-        <activity android:name=".samples.card_list.CardListMainActivity">
+        <activity android:name=".CardListMainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
