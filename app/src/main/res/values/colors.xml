@@ -3,4 +3,10 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="font_color">#000000</color>
+    <color name="font_color_action_bar">#FFFFFF</color>
+    <color name="font_color_card_info">#C0C0C0</color>
+    <color name="dialog_background">#FFFFFF</color>
+    <color name="list_overflow_background">#484848</color>
 </resources>
