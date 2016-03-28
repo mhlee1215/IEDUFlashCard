@@ -1,8 +1,7 @@
-package com.flashcard.iedu.flashcard.samples.card_list;
+package com.flashcard.iedu.flashcard;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,8 +15,6 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.flashcard.iedu.flashcard.R;
 
 public class CardFragment extends Fragment {
 
@@ -45,7 +42,9 @@ public class CardFragment extends Fragment {
 	private View mCardView;
 	private int mFontSize;
 
-	public static CardFragment newInstance(int wordIndex, int totalWords, int fontSize) {
+	private Card card;
+
+	public static CardFragment newInstance(int wordIndex, int totalWords, int fontSize, Card card) {
 		
 		CardFragment pageFragment = new CardFragment();
 		pageFragment.setFontSize(fontSize);
@@ -56,7 +55,9 @@ public class CardFragment extends Fragment {
 		bundle.putInt(CARD_POSITION_KEY, wordIndex);
 		bundle.putInt(MAX_KEY, totalWords);
 		pageFragment.setArguments(bundle);
-		
+
+		pageFragment.setCard(card);
+
 		return pageFragment;
 	}
 
@@ -71,9 +72,9 @@ public class CardFragment extends Fragment {
 
 		mCardView = inflater.inflate(R.layout.card_fragment, container, false);
 
-		mCardQuestion = getArguments().getString(CARD_QUESTION);
-		mCardAnswer = getArguments().getString(CARD_ANSWER);
-		mCardPosition = getArguments().getInt(CARD_POSITION_KEY);
+		mCardQuestion = card.getWord();//getArguments().getString(CARD_QUESTION);
+		mCardAnswer = card.getMeaning();//getArguments().getString(CARD_ANSWER);
+		mCardPosition = card.getPosition();//getArguments().getInt(CARD_POSITION_KEY);
 		
 		mTextViewQuestion = (TextView)mCardView.findViewById(R.id.textViewQuestion);
 		mTextViewQuestion.setTextSize(TypedValue.COMPLEX_UNIT_SP, mFontSize);
@@ -187,34 +188,37 @@ public class CardFragment extends Fragment {
 		final Animation flip2 = AnimationUtils.loadAnimation(view.getContext(), R.animator.flip2);
 		
 		flip1.setAnimationListener(new AnimationListener() {
-			
+
 			public void onAnimationStart(Animation animation) { /* Nothing to do here */ }
-			
+
 			public void onAnimationRepeat(Animation animation) { /* Nothing to do here */ }
-			
+
 			public void onAnimationEnd(Animation animation) {
-				
+
 				mWordToggle ^= true;
 
-				if(mWordToggle) {
+				if (mWordToggle) {
 
 					mTextViewQuestion.setVisibility(View.INVISIBLE);
 					mTextViewAnswer.setVisibility(View.VISIBLE);
 					mCounterTextView.setText(mCounterStringBuilder.toString());
 					mCounterTextView.append(BACK);
-				}
-				else {
+				} else {
 
 					mTextViewQuestion.setVisibility(View.VISIBLE);
 					mTextViewAnswer.setVisibility(View.INVISIBLE);
 					mCounterTextView.setText(mCounterStringBuilder.toString());
 					mCounterTextView.append(FRONT);
 				}
-				
+
 				view.startAnimation(flip2);
 			}
 		});
 		
 		view.startAnimation(flip1);
+	}
+
+	public void setCard(Card card){
+		this.card = card;
 	}
 }
