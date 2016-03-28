@@ -1,4 +1,4 @@
-package flashcard;
+package com.flashcard.iedu.flashcard;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
