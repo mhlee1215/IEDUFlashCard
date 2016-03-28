@@ -98,7 +98,7 @@
         <activity android:name=".samples.dynamic_list.ListViewDemo">
 
         </activity>
-        <activity android:name=".samples.customized_list.CustomizedListActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
