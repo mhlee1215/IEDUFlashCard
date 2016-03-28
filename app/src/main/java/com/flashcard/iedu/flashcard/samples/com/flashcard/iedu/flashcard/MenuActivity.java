@@ -1,4 +1,4 @@
-package com.flashcard.iedu.flashcard;
+package com.flashcard.iedu.flashcard.samples.com.flashcard.iedu.flashcard;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;

@@ -1,4 +1,4 @@
-package com.flashcard.iedu.flashcard;
+package com.flashcard.iedu.flashcard.samples.com.flashcard.iedu.flashcard;
 
 import android.content.Context;
 import android.view.LayoutInflater;

@@ -1,4 +1,4 @@
-package com.flashcard.iedu.flashcard;
+package com.flashcard.iedu.flashcard.samples.com.flashcard.iedu.flashcard;
 
 /**
  * Created by Aiden on 3/20/16.
