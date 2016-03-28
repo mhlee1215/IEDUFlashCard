@@ -13,13 +13,59 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="25dp"
+        android:textSize="40dp"
         android:textStyle="bold"
-        android:text="MyCustom View" />
+        android:layout_gravity="center"
+        android:text="SET TITLE" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="# terms created by Aiden You"
+        android:textAlignment="center"
+        android:ems="10"
+        android:id="@+id/editText" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="Flashcards B_1"
+            android:onClick="sendMessage"
+            android:layout_weight="1"
+            android:id="@+id/button3" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Learn B_2"
+            android:onClick="sendMessage1"
+            android:id="@+id/button4"
+            android:layout_gravity="center" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Match B_3"
+            android:onClick="sendMessage2"
+            android:id="@+id/button5"
+            android:layout_gravity="right" />
+
+
+    </LinearLayout>
 
     <ListView
         android:id="@+id/listView"
         android:layout_width="fill_parent"
+        android:layout_gravity="center"
         android:layout_height="fill_parent" >
     </ListView>
 
