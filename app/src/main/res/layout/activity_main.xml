@@ -17,6 +17,7 @@
         android:layout_height="75dp"
         android:layout_below="@id/logo"
         android:layout_centerHorizontal="true"
+        android:onClick="activitylogin"
         android:text="LOG IN" />
     <Button
         android:id="@+id/SIGN_UP_Button"
