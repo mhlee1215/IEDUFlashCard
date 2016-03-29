@@ -1,4 +1,4 @@
-package com.flashcard.iedu.flashcard;
+package com.flashcard.iedu.flashcard.samples.com.flashcard.iedu.flashcard;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -47,7 +47,7 @@ public class CardFragment extends Fragment {
 	private Card card;
 
 	public static CardFragment newInstance(int wordIndex, int totalWords, int fontSize, Card card) {
-
+		
 		CardFragment pageFragment = new CardFragment();
 		pageFragment.setFontSize(fontSize);
 		Bundle bundle = new Bundle();
@@ -68,7 +68,7 @@ public class CardFragment extends Fragment {
 	public void onActivityCreated(final Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
 	}
-
+	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -77,28 +77,28 @@ public class CardFragment extends Fragment {
 		mCardQuestion = card.getWord();//getArguments().getString(CARD_QUESTION);
 		mCardAnswer = card.getMeaning();//getArguments().getString(CARD_ANSWER);
 		mCardPosition = card.getPosition();//getArguments().getInt(CARD_POSITION_KEY);
-
+		
 		mTextViewQuestion = (TextView)mCardView.findViewById(R.id.textViewQuestion);
 		mTextViewQuestion.setTextSize(TypedValue.COMPLEX_UNIT_SP, mFontSize);
-
+		
 		if(null != mCardQuestion) {
-
+		
 			mTextViewQuestion.setText(mCardQuestion);
 		}
 		else {
-
+			
 			mTextViewQuestion.setText("??");
 		}
 
 		mTextViewAnswer = (TextView)mCardView.findViewById(R.id.textViewAnswer);
 		mTextViewAnswer.setTextSize(TypedValue.COMPLEX_UNIT_SP, mFontSize);
-
+		
 		if(null != mCardAnswer) {
-
+			
 			mTextViewAnswer.setText(mCardAnswer);
 		}
 		else {
-
+			
 			mTextViewAnswer.setText("!!");
 		}
 
@@ -125,7 +125,7 @@ public class CardFragment extends Fragment {
 				Toast.makeText(getActivity().getApplicationContext(), "cancel clicked", Toast.LENGTH_SHORT).show();
 			}
 		});
-
+		
 		// Set the bottom word counter
 		mCounterTextView = (TextView) mCardView.findViewById(R.id.textViewWordNumber);
 		mCounterStringBuilder = new StringBuilder();
@@ -136,59 +136,59 @@ public class CardFragment extends Fragment {
 		mCounterTextView.append(FRONT);
 
 		mCardView.setOnClickListener(new OnClickListener() {
-
+			
 			public void onClick(View v) {
 
 				turnPage(mCardView);
 			}
 		});
-
+		
 		return mCardView;
 	}
 
 	public void setFontSize(int size) {
-
+		
 		mFontSize = size;
 
 		if(null != mTextViewQuestion && null != mTextViewAnswer) {
-
+		
 			mTextViewQuestion.setTextSize(TypedValue.COMPLEX_UNIT_SP, mFontSize);
 			mTextViewAnswer.setTextSize(TypedValue.COMPLEX_UNIT_SP, mFontSize);
 		}
 	}
-
+	
 	public void onEdit() {
-
+		
 		mTextViewQuestion.setVisibility(View.INVISIBLE);
 		mTextViewAnswer.setVisibility(View.INVISIBLE);
-
+		
 		if(mWordToggle) {
-
+			
 			mEditTextWord.setText(mTextViewAnswer.getText());
 		}
 		else {
-
+		
 			mEditTextWord.setText(mTextViewQuestion.getText());
 		}
-
+ 		
 		mEditTextWord.setVisibility(View.VISIBLE);
 		mEditTextWord.setSelection(mEditTextWord.getText().length());
 		mLinearLayoutEditButtons.setVisibility(View.VISIBLE);
 	}
-
+	
 	private void turnPage(final View view) {
-
+	
 		/*
 		 * If in edit mode, we don't allow the user to switch between the front and back page.
 		 */
 		if(mEditTextWord.isShown()) {
-
+			
 			return;
 		}
 
 		final Animation flip1 = AnimationUtils.loadAnimation(view.getContext(), R.animator.flip1);
 		final Animation flip2 = AnimationUtils.loadAnimation(view.getContext(), R.animator.flip2);
-
+		
 		flip1.setAnimationListener(new AnimationListener() {
 
 			public void onAnimationStart(Animation animation) { /* Nothing to do here */ }
@@ -216,7 +216,7 @@ public class CardFragment extends Fragment {
 				view.startAnimation(flip2);
 			}
 		});
-
+		
 		view.startAnimation(flip1);
 	}
 
