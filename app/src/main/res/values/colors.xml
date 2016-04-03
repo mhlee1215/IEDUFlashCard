@@ -9,4 +9,6 @@
     <color name="font_color_card_info">#C0C0C0</color>
     <color name="dialog_background">#FFFFFF</color>
     <color name="list_overflow_background">#484848</color>
+
+    <color name="white">#000000</color>
 </resources>
