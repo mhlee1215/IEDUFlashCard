@@ -13,7 +13,7 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="40dp"
+        android:textSize="25dp"
         android:textStyle="bold"
         android:layout_gravity="center"
         android:text="SET TITLE" />
@@ -38,6 +38,7 @@
             android:layout_height="match_parent"
             android:text="Flashcards B_1"
             android:onClick="sendMessage"
+            android:background="@drawable/button_1"
             android:layout_weight="1"
             android:id="@+id/button3" />
 
@@ -46,6 +47,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="Learn B_2"
+            android:background="#ea80fc"
             android:onClick="sendMessage1"
             android:id="@+id/button4"
             android:layout_gravity="center" />
@@ -55,6 +57,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="Match B_3"
+            android:background="#ff2fa0ff"
             android:onClick="sendMessage2"
             android:id="@+id/button5"
             android:layout_gravity="right" />

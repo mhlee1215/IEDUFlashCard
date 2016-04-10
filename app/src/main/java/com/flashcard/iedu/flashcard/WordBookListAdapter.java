@@ -13,27 +13,26 @@ import com.flashcard.iedu.flashcard.R;
 
 import java.util.List;
 
-/**
- * Created by mhlee on 3/13/16.
- */
+
 public class WordBookListAdapter extends BaseAdapter {
 
     Context context = null;
-    List<String> mainColumn;
-    List<String> subColumn1;
+    //List<String> mainColumn;
+    //List<String> subColumn1;
+    List<Card> cardList;
     private static LayoutInflater inflater=null;
 
-    public WordBookListAdapter(Context context, List<String> main, List<String> sub1){
+    public WordBookListAdapter(Context context, List<Card> cardList){
         this.context = context;
-        this.mainColumn = main;
-        this.subColumn1 = sub1;
+        this.cardList = cardList;
+
         inflater = ( LayoutInflater )context.
                 getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
     @Override
     public int getCount() {
-        return mainColumn.size();
+        return cardList.size();
     }
 
     @Override
@@ -53,8 +52,8 @@ public class WordBookListAdapter extends BaseAdapter {
         rowView = inflater.inflate(R.layout.activity_wordbook_list_item, null);
         TextView viewMain =(TextView) rowView.findViewById(R.id.textViewMain);
         TextView viewSub1 =(TextView) rowView.findViewById(R.id.textViewSub1);
-        viewMain.setText(this.mainColumn.get(position));
-        viewSub1.setText(this.subColumn1.get(position));
+        viewMain.setText(this.cardList.get(position).getWord());
+        viewSub1.setText(this.cardList.get(position).getMeaning());
 
 
         rowView.setOnClickListener(new OnClickListener() {

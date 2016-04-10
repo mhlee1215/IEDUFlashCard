@@ -25,17 +25,17 @@ public class WordBookListActivity extends AppCompatActivity {
 
         context = this;
 
-        List<String> mainColumn = new ArrayList<String>();
-        List<String> subColumn1 = new ArrayList<String>();
+        List<Card> cardList = new ArrayList<Card>();
+        //List<String> subColumn1 = new ArrayList<String>();
 
         for (int i = 0; i < 30; i++) {
-            mainColumn.add("main " + i);
-            subColumn1.add("sub1 " + i);
+            cardList.add(new Card("word_"+i, "meaning_"+i, i));
+            //subColumn1.add("sub1 " + i);
         }
 
 
         lv = (ListView) findViewById(R.id.listView);
-        lv.setAdapter(new WordBookListAdapter(this, mainColumn, subColumn1));
+        lv.setAdapter(new WordBookListAdapter(this, cardList));
     }
 
     public void sendMessage (View view) {
