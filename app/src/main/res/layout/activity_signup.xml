@@ -59,8 +59,10 @@
             android:layout_marginTop="10dp"
             android:layout_below="@id/passwordagain" />
         <Button
+            android:id="@+id/finalsignupbutton"
             android:layout_width="300dp"
             android:layout_height="75dp"
+            android:enabled="false"
             android:layout_centerHorizontal="true"
             android:text="SIGN UP"
             android:layout_below="@id/agreement"

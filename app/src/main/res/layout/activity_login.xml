@@ -10,7 +10,7 @@
     tools:context="com.flashcard.iedu.flashcard.LoginActivity">
 
     <TextView
-        android:id="@+id/pagetitle"
+        android:id="@+id/loginpagetitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="LOG IN"
@@ -24,7 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Username"
-        android:layout_below="@+id/pagetitle"
+        android:layout_below="@+id/loginpagetitle"
         />
 
     <EditText
@@ -32,6 +32,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"
+        android:inputType="textPassword"
         android:layout_below="@+id/loginusername"/>
 
     <Button
