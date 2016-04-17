@@ -9,11 +9,37 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.flashcard.iedu.flashcard.LoginActivity">
 
+    <TextView
+        android:id="@+id/loginpagetitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LOG IN"
+        android:textSize="50dp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        />
+
     <EditText
-        android:id="@+id/username"
+        android:id="@+id/loginusername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/GoogleLogIn"
-        android:hint="@string/username" />
+        android:hint="Username"
+        android:layout_below="@+id/loginpagetitle"
+        />
+
+    <EditText
+        android:id="@+id/loginpassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:layout_below="@+id/loginusername"/>
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:text="LOG IN"
+        android:layout_below="@+id/loginpassword"/>
 
 </RelativeLayout>
