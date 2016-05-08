@@ -13,13 +13,14 @@ import com.flashcard.iedu.flashcard.samples.slideViewer.DepthPageTransformer;
 import java.util.ArrayList;
 import java.util.List;
 
+import edu.iedu.flashcard.dao.domain.Word;
 import fr.castorflex.android.verticalviewpager.VerticalViewPager;
 
 public class CardListMainActivity extends AppCompatActivity {
 
     VerticalViewPager mViewPager;
     CardListPagerAdapter cardListPagerAdapter;
-    Card listOfCards;
+    Word listOfCards;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,13 +29,13 @@ public class CardListMainActivity extends AppCompatActivity {
 
         //context=this;
 
-        List<Card> cards = new ArrayList<Card>();
+        List<Word> cards = new ArrayList<Word>();
 
         //List<String> word = new ArrayList<String>();
         //List<String> meaning = new ArrayList<String>();
 
         for(int i = 0 ; i < 14 ; i ++){
-            cards.add(new Card("word " + i, "meaning "+i, i));
+            cards.add(new Word("word " + i, "meaning "+i, i));
         }
 
         cardListPagerAdapter = new CardListPagerAdapter(getSupportFragmentManager(), cards);
@@ -54,10 +55,10 @@ public class CardListMainActivity extends AppCompatActivity {
      * sections of the app.
      */
     public static class CardListPagerAdapter extends FragmentPagerAdapter {
-        List<Card> cards;
+        List<Word> cards;
         FragmentManager fm;
 
-        public CardListPagerAdapter(FragmentManager fm, List<Card> cards) {
+        public CardListPagerAdapter(FragmentManager fm, List<Word> cards) {
             super(fm);
             this.fm = fm;
             this.cards = cards;
