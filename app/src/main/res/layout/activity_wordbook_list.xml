@@ -9,10 +9,11 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".WordBookListActivity" >
 
-    <TextView
-        android:id="@+id/textView1"
+    <EditText
+        android:id="@+id/editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:inputType="textCapCharacters"
         android:textSize="25dp"
         android:textStyle="bold"
         android:layout_gravity="center"
@@ -25,7 +26,7 @@
         android:text="# terms created by Aiden You"
         android:textAlignment="center"
         android:ems="10"
-        android:id="@+id/editText" />
+        android:id="@+id/editText2" />
 
     <LinearLayout
         android:layout_width="match_parent"

@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import edu.iedu.flashcard.dao.domain.Word;
+import edu.iedu.flashcard.service.WordService;
 
 public class WordBookListActivity extends AppCompatActivity {
 
@@ -27,17 +28,11 @@ public class WordBookListActivity extends AppCompatActivity {
 
         context = this;
 
-        List<Word> cardList = new ArrayList<Word>();
-        //List<String> subColumn1 = new ArrayList<String>();
-
-        for (int i = 0; i < 30; i++) {
-            cardList.add(new Word("word_"+i, "meaning_"+i, i));
-            //subColumn1.add("sub1 " + i);
-        }
+        List wordList = WordService.getWordList(1);
 
 
         lv = (ListView) findViewById(R.id.listView);
-        lv.setAdapter(new WordBookListAdapter(this, cardList));
+        lv.setAdapter(new WordBookListAdapter(this, wordList));
     }
 
     public void sendMessage (View view) {
