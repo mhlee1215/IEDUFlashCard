@@ -13,9 +13,11 @@ import com.flashcard.iedu.flashcard.samples.slideViewer.DepthPageTransformer;
 import java.util.ArrayList;
 import java.util.List;
 
+import fr.castorflex.android.verticalviewpager.VerticalViewPager;
+
 public class CardListMainActivity extends AppCompatActivity {
 
-    ViewPager mViewPager;
+    VerticalViewPager mViewPager;
     CardListPagerAdapter cardListPagerAdapter;
     Card listOfCards;
     @Override
@@ -37,10 +39,12 @@ public class CardListMainActivity extends AppCompatActivity {
 
         cardListPagerAdapter = new CardListPagerAdapter(getSupportFragmentManager(), cards);
 
-        mViewPager = (ViewPager) findViewById(R.id.pager);
+        mViewPager = (VerticalViewPager) findViewById(R.id.pager);
         mViewPager.setAdapter(cardListPagerAdapter);
         //mViewPager.setPageTransformer(true, new ZoomOutPageTransformer());
-        mViewPager.setPageTransformer(true, new DepthPageTransformer());
+        //mViewPager.setPageTransformer(true, new DepthPageTransformer());
+        //mViewPager.setPageTransformer(true, new VerticalPageTransformer());
+
 
     }
 

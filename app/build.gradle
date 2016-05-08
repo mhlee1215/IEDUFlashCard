@@ -37,4 +37,5 @@ dependencies {
     compile 'com.android.support:support-v13:23.2.0'
     compile 'com.android.support:support-v4:23.2.0'
     compile 'com.android.support:recyclerview-v7:23.2.0'
+    compile 'com.github.castorflex.verticalviewpager:library:19.0.1'
 }
