@@ -23,7 +23,13 @@
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="match_parent" />-->
 
-    <android.support.v4.view.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"
+    <!--<android.support.v4.view.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"-->
+        <!--android:id="@+id/pager"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent" />-->
+
+    <!-- https://github.com/castorflex/VerticalViewPager -->
+    <fr.castorflex.android.verticalviewpager.VerticalViewPager
         android:id="@+id/pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

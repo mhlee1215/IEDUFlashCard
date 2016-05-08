@@ -13,6 +13,8 @@ import com.flashcard.iedu.flashcard.R;
 import java.util.ArrayList;
 import java.util.List;
 
+import edu.iedu.flashcard.dao.domain.Word;
+
 public class WordBookListActivity extends AppCompatActivity {
 
     ListView lv;
@@ -25,11 +27,11 @@ public class WordBookListActivity extends AppCompatActivity {
 
         context = this;
 
-        List<Card> cardList = new ArrayList<Card>();
+        List<Word> cardList = new ArrayList<Word>();
         //List<String> subColumn1 = new ArrayList<String>();
 
         for (int i = 0; i < 30; i++) {
-            cardList.add(new Card("word_"+i, "meaning_"+i, i));
+            cardList.add(new Word("word_"+i, "meaning_"+i, i));
             //subColumn1.add("sub1 " + i);
         }
 

@@ -13,16 +13,18 @@ import com.flashcard.iedu.flashcard.R;
 
 import java.util.List;
 
+import edu.iedu.flashcard.dao.domain.Word;
+
 
 public class WordBookListAdapter extends BaseAdapter {
 
     Context context = null;
     //List<String> mainColumn;
     //List<String> subColumn1;
-    List<Card> cardList;
+    List<Word> cardList;
     private static LayoutInflater inflater=null;
 
-    public WordBookListAdapter(Context context, List<Card> cardList){
+    public WordBookListAdapter(Context context, List<Word> cardList){
         this.context = context;
         this.cardList = cardList;
 
@@ -52,7 +54,7 @@ public class WordBookListAdapter extends BaseAdapter {
         rowView = inflater.inflate(R.layout.activity_wordbook_list_item, null);
         TextView viewMain =(TextView) rowView.findViewById(R.id.textViewMain);
         TextView viewSub1 =(TextView) rowView.findViewById(R.id.textViewSub1);
-        viewMain.setText(this.cardList.get(position).getWord());
+        viewMain.setText(this.cardList.get(position).getName());
         viewSub1.setText(this.cardList.get(position).getMeaning());
 
 
