@@ -1,6 +1,7 @@
 package com.flashcard.iedu.flashcard;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -57,10 +58,11 @@ public class MenuAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                TextView viewMain =(TextView) v.findViewById(R.id.textViewMain);
-                Toast.makeText(context, "You Clicked " + viewMain.getText(), Toast.LENGTH_LONG).show();
+                v.getContext().startActivity(new Intent(context, WordBookListActivity.class));
+
             }
         });
         return rowView;
+
     }
 }
