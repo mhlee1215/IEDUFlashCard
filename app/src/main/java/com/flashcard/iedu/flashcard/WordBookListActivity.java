@@ -56,6 +56,7 @@ public class WordBookListActivity extends AppCompatActivity {
         TextView viewMain =(TextView) view.findViewById(R.id.textViewMain);
         Toast.makeText(context, "You clicked Learn", Toast.LENGTH_LONG).show();
     }
+
     public void sendMessage2 (View view) {
         TextView viewMain = (TextView) view.findViewById(R.id.textViewMain);
         Toast.makeText( context, "You clicked Match", Toast.LENGTH_LONG).show();
@@ -69,7 +70,7 @@ public class WordBookListActivity extends AppCompatActivity {
     private class Connection extends AsyncTask {
         @Override
         protected Object doInBackground(Object... arg0) {
-            int wordBookId = Integer.parseInt((String)arg0[0]);
+            int wordBookId = (int)arg0[0];
             List<Word> test = WordService.getWordList(wordBookId);
             wordList.addAll(test);
             adapter.notifyDataSetChanged();
