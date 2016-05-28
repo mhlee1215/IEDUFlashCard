@@ -9,20 +9,20 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.flashcard.iedu.flashcard.R;
-
 import java.util.List;
 
 import edu.iedu.flashcard.dao.domain.WordBook;
 
-
-public class MenuAdapter extends BaseAdapter {
+/**
+ * Created by Yujin on 5/27/2016.
+ */
+public class SearchAdapter extends BaseAdapter{
 
     Context context = null;
     List<WordBook> wordbookList;
     private static LayoutInflater inflater=null;
 
-    public MenuAdapter(Context context, List<WordBook> wordbookList){
+    public SearchAdapter(Context context, List<WordBook> wordbookList){
         this.context = context;
         this.wordbookList = wordbookList;
 
@@ -64,3 +64,4 @@ public class MenuAdapter extends BaseAdapter {
         return rowView;
     }
 }
+
