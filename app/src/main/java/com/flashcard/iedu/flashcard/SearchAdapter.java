@@ -1,7 +1,6 @@
 package com.flashcard.iedu.flashcard;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -10,20 +9,20 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.flashcard.iedu.flashcard.R;
-
 import java.util.List;
 
 import edu.iedu.flashcard.dao.domain.WordBook;
 
-
-public class MenuAdapter extends BaseAdapter {
+/**
+ * Created by Yujin on 5/27/2016.
+ */
+public class SearchAdapter extends BaseAdapter{
 
     Context context = null;
     List<WordBook> wordbookList;
     private static LayoutInflater inflater=null;
 
-    public MenuAdapter(Context context, List<WordBook> wordbookList){
+    public SearchAdapter(Context context, List<WordBook> wordbookList){
         this.context = context;
         this.wordbookList = wordbookList;
 
@@ -58,11 +57,11 @@ public class MenuAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                v.getContext().startActivity(new Intent(context, WordBookListActivity.class));
-
+                TextView viewMain =(TextView) v.findViewById(R.id.textViewMain);
+                Toast.makeText(context, "You Clicked " + viewMain.getText(), Toast.LENGTH_LONG).show();
             }
         });
         return rowView;
-
     }
 }
+
