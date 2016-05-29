@@ -69,9 +69,8 @@ public class WordBookListActivity extends AppCompatActivity {
     private class Connection extends AsyncTask {
         @Override
         protected Object doInBackground(Object... arg0) {
-            Integer wordBookId = (Integer)arg0[0];
-            List<Word> test = WordService.getWordList(1);
-            System.out.println(test);
+            int wordBookId = Integer.parseInt((String)arg0[0]);
+            List<Word> test = WordService.getWordList(wordBookId);
             wordList.addAll(test);
             adapter.notifyDataSetChanged();
             return null;

@@ -67,7 +67,7 @@ public class MenuActivity extends AppCompatActivity {
     private class Connection extends AsyncTask {
 
         protected Object doInBackground(Object... arg0) {
-            Integer wordBookId = (Integer)arg0[0];
+            int wordBookId = Integer.parseInt((String)arg0[0]);
             //List<WordBook> test = WordService.getWordBookList(wordBookId);
             List<WordBook> test = new ArrayList<WordBook>();
             for (int i = 0 ; i < 30 ; i++){
