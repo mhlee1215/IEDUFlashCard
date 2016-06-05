@@ -14,13 +14,19 @@
             android:inputType="textCapCharacters"
             android:textSize="25dp"
             android:textStyle="bold"
-            android:text="Search" />
+            android:text="Search"
+            android:layout_weight="0.95" />
     <Button
-        android:layout_width="47dp"
+        android:layout_width="43dp"
         android:layout_height="wrap_content"
         android:background="@drawable/button_search"
         android:onClick="sendMessage2"
-        android:id="@+id/button7"
-        android:layout_gravity="right" />
+        android:id="@+id/button7" />
 </LinearLayout>
+    <ListView
+        android:id="@+id/ListView"
+        android:layout_width="fill_parent"
+        android:layout_gravity="center"
+        android:layout_height="fill_parent">
+    </ListView>
 </LinearLayout>
