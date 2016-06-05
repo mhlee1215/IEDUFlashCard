@@ -19,17 +19,17 @@ import edu.iedu.flashcard.dao.domain.Word;
 import edu.iedu.flashcard.service.UserService;
 import edu.iedu.flashcard.service.WordService;
 
-public class WordBookListActivity extends AppCompatActivity {
+public class ResultActivity extends AppCompatActivity {
 
     ListView lv;
     Context context;
     List<Word> wordList;
-    WordBookListAdapter adapter;
+    ResultAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_wordbook_list);
+        setContentView(R.layout.activity_result);
 
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
@@ -41,7 +41,7 @@ public class WordBookListActivity extends AppCompatActivity {
 
         lv = (ListView) findViewById(R.id.listView);
 
-        adapter = new WordBookListAdapter(this, wordList);
+        adapter = new ResultAdapter(this, wordList);
         lv.setAdapter(adapter);
 
         getWords();

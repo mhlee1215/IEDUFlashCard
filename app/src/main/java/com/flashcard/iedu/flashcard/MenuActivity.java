@@ -19,7 +19,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import edu.iedu.flashcard.dao.domain.WordBook;
-import edu.iedu.flashcard.service.WordBookService;
 import edu.iedu.flashcard.service.WordService;
 
 /**
@@ -34,9 +33,6 @@ public class MenuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu2);
-
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);
 
 
         context = this;
@@ -66,18 +62,18 @@ public class MenuActivity extends AppCompatActivity {
     }
     public void getWordBooks () {
         Connection conn = new Connection ();
-        conn.doInBackground(1);
+        conn.doInBackground (1);
     }
     private class Connection extends AsyncTask {
 
         protected Object doInBackground(Object... arg0) {
-            int wordBookId = (Integer)arg0[0];
-            List<WordBook> test = WordBookService.getWordBooks();//.getWordBookList(wordBookId);
-            //List<WordBook> test = new ArrayList<WordBook>();
-//            for (int i = 0 ; i < 30 ; i++){
-//                test.add(new WordBook("dummy wordbook_"+i));
-//
-//            }
+            int wordBookId = Integer.parseInt((String)arg0[0]);
+            //List<WordBook> test = WordService.getWordBookList(wordBookId);
+            List<WordBook> test = new ArrayList<WordBook>();
+            for (int i = 0 ; i < 30 ; i++){
+                test.add(new WordBook("dummy wordbook_"+i));
+
+            }
             wordbookList.addAll(test);
             adapter.notifyDataSetChanged();
             return null;

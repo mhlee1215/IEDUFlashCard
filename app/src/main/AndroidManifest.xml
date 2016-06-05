@@ -21,16 +21,16 @@
             android:name=".SignupActivity"
             android:label="@string/title_activity_signup"
             android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
         <activity
             android:name=".MenuActivity"
             android:label="@string/title_activity_menu"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".samples.tab.CollectionDemoActivity"
@@ -83,7 +83,10 @@
                 android:value=".samples.flip.MainActivity" />
         </activity>
         <activity android:name=".WordBookActivity" />
-        <activity android:name=".WordBookListActivity"></activity>
+        <activity android:name=".WordBookListActivity">
+        </activity>
+        <activity android:name=".SearchActivity">
+            </activity>
         <activity android:name=".WordActivity" />
         <activity android:name=".MatchActivity" />
         <activity android:name=".SettingActivity" />

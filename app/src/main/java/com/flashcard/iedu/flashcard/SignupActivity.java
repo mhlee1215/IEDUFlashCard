@@ -48,20 +48,20 @@ public class SignupActivity extends AppCompatActivity {
 
     public void onCheckboxClicked(View view) {
         // Is the view now checked?
-        Button btnLogin = (Button)view.findViewById(R.id.finalsignupbutton);
+        Button btnLogin = (Button)this.findViewById(R.id.finalsignupbutton);
         System.out.println("button?: "+btnLogin);
-//        boolean checked = ((CheckBox) view).isChecked();
-//        switch (view.getId()) {
-//            case R.id.agreement:
-//                if (checked) {
-//                    btnLogin.setEnabled(true);
-//                }
-//                else {
-//                    btnLogin.setEnabled(false);
-//                }
-//                break;
-//
-//        }
+        boolean checked = ((CheckBox) view).isChecked();
+        switch (view.getId()) {
+            case R.id.agreement:
+                if (checked) {
+                    btnLogin.setEnabled(true);
+                }
+                else {
+                    btnLogin.setEnabled(false);
+                }
+                break;
+
+        }
     }
 
     public void goSignup(View view){

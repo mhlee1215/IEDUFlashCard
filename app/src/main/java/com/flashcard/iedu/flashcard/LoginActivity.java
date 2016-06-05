@@ -56,7 +56,7 @@ public class LoginActivity extends AppCompatActivity {
             try {
                 int result = UserService.login(user);
 
-                Intent i = new Intent(context, MainActivity.class);
+                Intent i = new Intent(context, MenuActivity.class);
                 if(result == User.STATUS_LOGIN_SUCCESS){
                     //i.putExtra(SIGNUP_RESULT, SIGNUP_RESULT_SUCCESS);
                 }else{

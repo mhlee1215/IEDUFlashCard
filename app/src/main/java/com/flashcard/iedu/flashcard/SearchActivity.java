@@ -3,17 +3,11 @@ package com.flashcard.iedu.flashcard;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.StrictMode;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.flashcard.iedu.flashcard.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,8 +15,7 @@ import java.util.List;
 import edu.iedu.flashcard.dao.domain.WordBook;
 
 
-public class SearchActivity {
-    public class MenuActivity extends AppCompatActivity {
+    public class SearchActivity extends AppCompatActivity {
         Context context;
         ListView lv;
         List<WordBook> wordbookList;
@@ -36,7 +29,7 @@ public class SearchActivity {
 
             context = this;
 
-            List<WordBook> wordbookList = new ArrayList<WordBook>();
+            wordbookList = new ArrayList<WordBook>();
 
             lv = (ListView) findViewById(R.id.ListView);
             adapter = new SearchAdapter(this, wordbookList);
@@ -68,7 +61,7 @@ public class SearchActivity {
         private class Connection extends AsyncTask {
 
             protected Object doInBackground(Object... arg0) {
-                int wordBookId = Integer.parseInt((String) arg0[0]);
+                int wordBookId = (Integer)arg0[0];
                 //List<WordBook> test = WordService.getWordBookList(wordBookId);
                 List<WordBook> test = new ArrayList<WordBook>();
                 for (int i = 0; i < 30; i++) {
@@ -82,4 +75,3 @@ public class SearchActivity {
             }
         }
     }
-}
