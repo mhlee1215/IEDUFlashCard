@@ -36,9 +36,11 @@
         android:layout_below="@+id/loginusername"/>
 
     <Button
+        android:id="@+id/gologin"
         android:layout_width="200dp"
         android:layout_height="60dp"
         android:layout_centerHorizontal="true"
+        android:onClick="gologin"
         android:text="LOG IN"
         android:layout_below="@+id/loginpassword"/>
 
