@@ -45,7 +45,7 @@ public class LoginActivity extends AppCompatActivity {
         System.out.println("loginpassword"+password);
 
         User user = new User();
-        user.setName(loginusernameEditText.getText().toString());
+        user.setEmail(loginusernameEditText.getText().toString());
         user.setPassword(loginpasswordEditText.getText().toString());
 
         Connection conn = new Connection(this, user);
