@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.flashcard.iedu.flashcard.R;
@@ -34,20 +35,6 @@ public class LoginActivity extends AppCompatActivity {
         StrictMode.setThreadPolicy(policy);
     }
 
-
-    public void goSignup(View view){
-        EditText loginusernameEditText = (EditText) findViewById(R.id.loginusername);
-
-        EditText loginpasswordEditText = (EditText) findViewById(R.id.loginpassword);
-
-        User user = new User();
-        user.setName(loginusernameEditText.getText().toString());
-        user.setPassword(loginpasswordEditText.getText().toString());
-
-        Connection conn = new Connection(this, user);
-        conn.doInBackground();
-
-    }
     public void gologin (View view) {
         Button btnlogin = (Button) view.findViewById(R.id.LOG_IN_Button);
         EditText loginusernameEditText = (EditText) findViewById(R.id.loginusername);
@@ -56,6 +43,13 @@ public class LoginActivity extends AppCompatActivity {
         String password = loginpasswordEditText.getText().toString();
         System.out.println("loginusername:"+userName);
         System.out.println("loginpassword"+password);
+
+        User user = new User();
+        user.setName(loginusernameEditText.getText().toString());
+        user.setPassword(loginpasswordEditText.getText().toString());
+
+        Connection conn = new Connection(this, user);
+        conn.doInBackground();
     }
     private class Connection extends AsyncTask {
 
@@ -74,11 +68,12 @@ public class LoginActivity extends AppCompatActivity {
 
                 Intent i = new Intent(context, MenuActivity.class);
                 if(result == User.STATUS_LOGIN_SUCCESS){
-                    //i.putExtra(SIGNUP_RESULT, SIGNUP_RESULT_SUCCESS);
+                    context.startActivity(i);
                 }else{
+                        Toast.makeText(context, "login failed", Toast.LENGTH_LONG).show();
+                    }
                     //i.putExtra(SIGNUP_RESULT, SIGNUP_RESULT_FAIL);
-                }
-                context.startActivity(i);
+
 
             }catch(Exception e){
                 e.printStackTrace();
