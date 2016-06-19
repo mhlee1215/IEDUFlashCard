@@ -49,7 +49,7 @@ public class LoginActivity extends AppCompatActivity {
         user.setPassword(loginpasswordEditText.getText().toString());
 
         Connection conn = new Connection(this, user);
-        conn.doInBackground();
+        conn.doInBackground(user);
     }
     private class Connection extends AsyncTask {
 
@@ -68,6 +68,10 @@ public class LoginActivity extends AppCompatActivity {
 
                 Intent i = new Intent(context, MenuActivity.class);
                 if(result == User.STATUS_LOGIN_SUCCESS){
+                    User userQuery = new User();
+                    userQuery.setEmail(((User) arg0[0]).getEmail());
+                    User userData = UserService.readUserData(userQuery);
+                    i.putExtra("USER_ID", userData.getId());
                     context.startActivity(i);
                 }else{
                         Toast.makeText(context, "login failed", Toast.LENGTH_LONG).show();
