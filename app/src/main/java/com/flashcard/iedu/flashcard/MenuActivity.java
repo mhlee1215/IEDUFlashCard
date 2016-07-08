@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import edu.iedu.flashcard.dao.domain.WordBook;
+import edu.iedu.flashcard.service.WordBookService;
 import edu.iedu.flashcard.service.WordService;
 
 /**
@@ -34,6 +35,9 @@ public class MenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu2);
 
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+
 
         context = this;
 
@@ -43,8 +47,21 @@ public class MenuActivity extends AppCompatActivity {
         lv = (ListView) findViewById(R.id.ListView);
         adapter = new MenuAdapter(this, wordbookList);
         lv.setAdapter(adapter);
+        Integer newInteger;
+        if (savedInstanceState == null) {
+            Bundle extras = getIntent().getExtras();
+            if (extras == null) {
+                newInteger = null;
+            } else {
+                newInteger = extras.getInt("USER_ID");
+            }
+        } else {
+            newInteger = (Integer) savedInstanceState.getSerializable("USER_ID");
 
-        getWordBooks ();
+        }
+        System.out.println(newInteger);
+
+        getWordBooks(newInteger);
 
     }
     public void sendMessage (View view) {
@@ -60,20 +77,17 @@ public class MenuActivity extends AppCompatActivity {
         TextView viewMain = (TextView) view.findViewById(R.id.textViewMain);
         Toast.makeText( context, "You clicked class", Toast.LENGTH_LONG).show();
     }
-    public void getWordBooks () {
+    public void getWordBooks (int wordBookId) {
         Connection conn = new Connection ();
-        conn.doInBackground (1);
+        conn.doInBackground(wordBookId);
     }
     private class Connection extends AsyncTask {
 
         protected Object doInBackground(Object... arg0) {
             int wordBookId = (Integer)arg0[0];
-            //List<WordBook> test = WordService.getWordBookList(wordBookId);
-            List<WordBook> test = new ArrayList<WordBook>();
-            for (int i = 0 ; i < 30 ; i++){
-                test.add(new WordBook("dummy wordbook_"+i));
+            List<WordBook> test = WordBookService.getWordBooks(wordBookId);
 
-            }
+
             wordbookList.addAll(test);
             adapter.notifyDataSetChanged();
             return null;
