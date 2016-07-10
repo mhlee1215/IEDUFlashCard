@@ -19,28 +19,30 @@
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:text="Latest A_1"
+            android:text="Latest"
             android:onClick="sendMessage"
             android:background="@drawable/button_1"
             android:layout_weight="1"
-            android:id="@+id/button3" />
+            android:id="@+id/button3"
+            android:layout_marginRight="20dp"/>
 
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Set A_2"
-            android:background="#ea80fc"
+            android:text="Set"
+            android:background="@drawable/button_1"
             android:onClick="sendMessage1"
             android:id="@+id/button4"
-            android:layout_gravity="center" />
+            android:layout_gravity="center"
+            android:layout_marginRight="20dp"/>
 
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Class A_3"
-            android:background="#ff2fa0ff"
+            android:text="Class"
+            android:background="@drawable/button_1"
             android:onClick="sendMessage2"
             android:id="@+id/button5"
             android:layout_gravity="right" />

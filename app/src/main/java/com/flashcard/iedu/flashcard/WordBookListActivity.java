@@ -18,6 +18,8 @@ import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -73,6 +75,11 @@ public class WordBookListActivity extends AppCompatActivity {
                 startActivity(new Intent(WordBookListActivity.this, CardListMainActivity.class));
             }
         });
+        TextView newtext = (TextView) findViewById(R.id.textView1);
+        newtext.setText("SOMETHING");
+
+        TextView numbertext = (TextView) findViewById(R.id.textView2);
+        numbertext.setText(wordList.size() + "terms created by");
     }
 
 

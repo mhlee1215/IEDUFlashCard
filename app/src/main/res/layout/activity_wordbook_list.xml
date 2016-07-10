@@ -9,24 +9,23 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".WordBookListActivity" >
 
-    <EditText
-        android:id="@+id/editText"
+    <TextView
+        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textCapCharacters"
         android:textSize="25dp"
         android:textStyle="bold"
         android:layout_gravity="center"
-        android:text="SET TITLE" />
+        />
 
-    <EditText
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="# terms created by Aiden You"
         android:textAlignment="center"
         android:ems="10"
-        android:id="@+id/editText2" />
+        android:id="@+id/textView2" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -37,28 +36,30 @@
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:text="Flashcards B_1"
+            android:text="Flashcards"
             android:onClick="sendMessage"
             android:background="@drawable/button_1"
             android:layout_weight="1"
-            android:id="@+id/button3" />
+            android:id="@+id/button3"
+            android:layout_marginRight="20dp"/>
 
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Learn B_2"
-            android:background="#ea80fc"
+            android:text="Learn"
+            android:background="@drawable/button_1"
             android:onClick="sendMessage1"
+            android:layout_weight="1"
             android:id="@+id/button4"
-            android:layout_gravity="center" />
+            android:layout_gravity="center"
+            android:layout_marginRight="20dp" />
 
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Match B_3"
-            android:background="#ff2fa0ff"
+            android:text="Match"
+            android:background="@drawable/button_1"
             android:onClick="sendMessage2"
             android:id="@+id/button5"
             android:layout_gravity="right" />
