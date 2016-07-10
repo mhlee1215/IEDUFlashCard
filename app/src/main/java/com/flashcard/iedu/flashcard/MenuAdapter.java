@@ -21,6 +21,7 @@ public class MenuAdapter extends BaseAdapter {
 
     int userId;
     Context context = null;
+
     static List<WordBook> wordbookList;
     private static LayoutInflater inflater=null;
 
@@ -57,11 +58,16 @@ public class MenuAdapter extends BaseAdapter {
         rowView.setId(this.wordbookList.get(position).getId());
 
 
+
         rowView.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 Intent i = new Intent(context, WordBookListActivity.class);
+                TextView tv = (TextView)v.findViewById(R.id.textViewMain);
+
+                i.putExtra("WORDBOOK_NAME",tv.getText());
+                //wordbookList.get(v.get)
                 //wordbookList.get(position);
                 i.putExtra("WORDBOOK_ID", v.getId());
                 v.getContext().startActivity(i);

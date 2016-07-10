@@ -28,6 +28,7 @@ import edu.iedu.flashcard.service.WordService;
 public class WordBookListActivity extends AppCompatActivity {
 
     int wordbookId;
+    String wordbookName;
     ListView lv;
     Context context;
     List<Word> wordList;
@@ -55,13 +56,17 @@ public class WordBookListActivity extends AppCompatActivity {
             Bundle extras = getIntent().getExtras();
             if (extras == null) {
                 wordbookId = -1;
+                wordbookName = "";
             } else {
                 wordbookId = extras.getInt("WORDBOOK_ID");
+                wordbookName = extras.getString("WORDBOOK_NAME");
             }
         }else {
             wordbookId = (Integer) savedInstanceState.getSerializable("WORDBOOK_ID");
+            wordbookName = (String) savedInstanceState.getSerializable("WORDBOOK_NAME");
         }
         System.out.println("WORDBOOK_ID>>>"+wordbookId);
+        System.out.println("WORDBOOK_NAME>>>"+wordbookName);
         getWords(wordbookId);
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
