@@ -76,7 +76,7 @@ public class CardFragment extends Fragment {
 
 		mCardView = inflater.inflate(R.layout.card_fragment, container, false);
 
-		mCardQuestion = card.getMeaning();//getArguments().getString(CARD_QUESTION);
+		mCardQuestion = card.getName();//getArguments().getString(CARD_QUESTION);
 		mCardAnswer = card.getMeaning();//getArguments().getString(CARD_ANSWER);
 		mCardPosition = card.getPosition();//getArguments().getInt(CARD_POSITION_KEY);
 

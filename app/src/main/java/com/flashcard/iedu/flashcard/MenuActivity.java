@@ -1,6 +1,7 @@
 package com.flashcard.iedu.flashcard;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -44,22 +45,29 @@ public class MenuActivity extends AppCompatActivity {
         wordbookList = new ArrayList<WordBook>();
         //WordBookService.getWordBookList(1);
 
-        lv = (ListView) findViewById(R.id.ListView);
-        adapter = new MenuAdapter(this, wordbookList);
-        lv.setAdapter(adapter);
-        Integer newInteger;
-        if (savedInstanceState == null) {
-            Bundle extras = getIntent().getExtras();
-            if (extras == null) {
-                newInteger = null;
-            } else {
-                newInteger = extras.getInt("USER_ID");
-            }
-        } else {
-            newInteger = (Integer) savedInstanceState.getSerializable("USER_ID");
 
-        }
-        System.out.println(newInteger);
+        Integer newInteger;
+//        if (savedInstanceState == null) {
+//            Bundle extras = getIntent().getExtras();
+//            if (extras == null) {
+//                newInteger = null;
+//            } else {
+//                newInteger = extras.getInt("USER_ID");
+//            }
+//        } else {
+//            newInteger = (Integer) savedInstanceState.getSerializable("USER_ID");
+//
+//        }
+//
+//        System.out.println("MENUACTIVITY_USERID:"+newInteger);
+
+        SharedPreferences pref = getApplicationContext().getSharedPreferences("IEDUPref", 0); // 0 - for private mode
+        newInteger = pref.getInt("USER_ID", -1);
+        System.out.println("MENUACTIVITY_USERID:"+newInteger);
+
+        adapter = new MenuAdapter(this, wordbookList, newInteger);
+        lv = (ListView) findViewById(R.id.ListView);
+        lv.setAdapter(adapter);
 
         getWordBooks(newInteger);
 
@@ -84,8 +92,8 @@ public class MenuActivity extends AppCompatActivity {
     private class Connection extends AsyncTask {
 
         protected Object doInBackground(Object... arg0) {
-            int wordBookId = (Integer)arg0[0];
-            List<WordBook> test = WordBookService.getWordBooks(wordBookId);
+            int userId = (Integer)arg0[0];
+            List<WordBook> test = WordBookService.getWordBooks(userId);
 
 
             wordbookList.addAll(test);
