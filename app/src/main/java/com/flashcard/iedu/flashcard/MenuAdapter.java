@@ -19,13 +19,16 @@ import edu.iedu.flashcard.dao.domain.WordBook;
 
 public class MenuAdapter extends BaseAdapter {
 
+    int userId;
     Context context = null;
-    List<WordBook> wordbookList;
+
+    static List<WordBook> wordbookList;
     private static LayoutInflater inflater=null;
 
-    public MenuAdapter(Context context, List<WordBook> wordbookList){
+    public MenuAdapter(Context context, List<WordBook> wordbookList, int userId){
         this.context = context;
         this.wordbookList = wordbookList;
+        this.userId = userId;
 
         inflater = ( LayoutInflater )context.
                 getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -52,13 +55,22 @@ public class MenuAdapter extends BaseAdapter {
         rowView = inflater.inflate(R.layout.activity_menu_list_item, null);
         TextView viewMain =(TextView) rowView.findViewById(R.id.textViewMain);
         viewMain.setText(this.wordbookList.get(position).getName());
+        rowView.setId(this.wordbookList.get(position).getId());
+
 
 
         rowView.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                v.getContext().startActivity(new Intent(context, WordBookListActivity.class));
+                Intent i = new Intent(context, WordBookListActivity.class);
+                TextView tv = (TextView)v.findViewById(R.id.textViewMain);
+
+                i.putExtra("WORDBOOK_NAME",tv.getText());
+                //wordbookList.get(v.get)
+                //wordbookList.get(position);
+                i.putExtra("WORDBOOK_ID", v.getId());
+                v.getContext().startActivity(i);
 
             }
         });

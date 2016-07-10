@@ -2,6 +2,7 @@ package com.flashcard.iedu.flashcard;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -33,6 +34,8 @@ public class LoginActivity extends AppCompatActivity {
 
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
+
+
     }
 
     public void gologin (View view) {
@@ -71,7 +74,14 @@ public class LoginActivity extends AppCompatActivity {
                     User userQuery = new User();
                     userQuery.setEmail(((User) arg0[0]).getEmail());
                     User userData = UserService.readUserData(userQuery);
-                    i.putExtra("USER_ID", userData.getId());
+                    //System.out.println("USERDATA" + userData);
+
+                    SharedPreferences pref = getApplicationContext().getSharedPreferences("IEDUPref", 0); // 0 - for private mode
+                    SharedPreferences.Editor editor = pref.edit();
+                    editor.putInt("USER_ID", userData.getId());
+                    editor.commit();
+
+                    //i.putExtra("USER_ID", userData.getId());
                     context.startActivity(i);
                 }else{
                         Toast.makeText(context, "login failed", Toast.LENGTH_LONG).show();

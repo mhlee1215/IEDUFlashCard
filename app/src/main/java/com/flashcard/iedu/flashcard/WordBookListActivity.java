@@ -29,6 +29,8 @@ import edu.iedu.flashcard.service.WordService;
 
 public class WordBookListActivity extends AppCompatActivity {
 
+    int wordbookId;
+    String wordbookName;
     ListView lv;
     Context context;
     List<Word> wordList;
@@ -51,19 +53,23 @@ public class WordBookListActivity extends AppCompatActivity {
         lv = (ListView) findViewById(R.id.listView);
         adapter = new WordBookListAdapter(this, wordList);
         lv.setAdapter(adapter);
-        int newInteger;
+        //int newInteger;
         if (savedInstanceState == null) {
             Bundle extras = getIntent().getExtras();
             if (extras == null) {
-                newInteger = -1;
+                wordbookId = -1;
+                wordbookName = "";
             } else {
-                newInteger = extras.getInt("USER_ID");
+                wordbookId = extras.getInt("WORDBOOK_ID");
+                wordbookName = extras.getString("WORDBOOK_NAME");
             }
         }else {
-            newInteger = (Integer) savedInstanceState.getSerializable("USER_ID");
+            wordbookId = (Integer) savedInstanceState.getSerializable("WORDBOOK_ID");
+            wordbookName = (String) savedInstanceState.getSerializable("WORDBOOK_NAME");
         }
-        System.out.println(newInteger);
-        getWords(newInteger);
+        System.out.println("WORDBOOK_ID>>>"+wordbookId);
+        System.out.println("WORDBOOK_NAME>>>"+wordbookName);
+        getWords(wordbookId);
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
@@ -72,7 +78,9 @@ public class WordBookListActivity extends AppCompatActivity {
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(WordBookListActivity.this, CardListMainActivity.class));
+                Intent i = new Intent(WordBookListActivity.this, CardListMainActivity.class);
+                i.putExtra("WORDBOOK_ID", wordbookId);
+                startActivity(i);
             }
         });
         TextView newtext = (TextView) findViewById(R.id.textView1);
