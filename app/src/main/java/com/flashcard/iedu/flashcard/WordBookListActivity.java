@@ -84,7 +84,7 @@ public class WordBookListActivity extends AppCompatActivity {
             }
         });
         TextView newtext = (TextView) findViewById(R.id.textView1);
-        newtext.setText("SOMETHING");
+        newtext.setText(wordbookName);
 
         TextView numbertext = (TextView) findViewById(R.id.textView2);
         numbertext.setText(wordList.size() + "terms created by");
