@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.flashcard.iedu.flashcard.R;
+import com.wang.avi.AVLoadingIndicatorView;
 
 
 import edu.iedu.flashcard.dao.domain.User;
@@ -25,7 +26,9 @@ import edu.iedu.flashcard.service.UserService;
 
 public class LoginActivity extends AppCompatActivity {
 
-    Context context;
+
+    AVLoadingIndicatorView loadingMark;
+    //Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,33 +38,72 @@ public class LoginActivity extends AppCompatActivity {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
+        loadingMark = (AVLoadingIndicatorView)findViewById(R.id.avloadingIndicatorView);
 
+        Button btnlogin = (Button)findViewById(R.id.gologin);
+        btnlogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                gologin();
+            }
+        });
+
+        Button btnsignup = (Button)findViewById(R.id.gosignup);
+        btnsignup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                gosignup();
+            }
+        });
     }
 
-    public void gologin (View view) {
-        Button btnlogin = (Button) view.findViewById(R.id.LOG_IN_Button);
+    public void gologin () {
+
+        loadingMark.setVisibility(View.VISIBLE);
+
+
+
+        //Button btnlogin = (Button) view.findViewById(R.id.LOG_IN_Button);
         EditText loginusernameEditText = (EditText) findViewById(R.id.loginusername);
         String userName = loginusernameEditText.getText().toString();
         EditText loginpasswordEditText = (EditText) findViewById(R.id.loginpassword);
         String password = loginpasswordEditText.getText().toString();
-        System.out.println("loginusername:"+userName);
-        System.out.println("loginpassword"+password);
+        System.out.println("loginusername:" + userName);
+        System.out.println("loginpassword" + password);
 
         User user = new User();
         user.setEmail(loginusernameEditText.getText().toString());
         user.setPassword(loginpasswordEditText.getText().toString());
 
         Connection conn = new Connection(this, user);
-        conn.doInBackground(user);
+        conn.execute(user);
+
+
     }
+
+    public void gosignup (){
+        Intent i = new Intent(this, SignupActivity.class);
+        this.startActivity(i);
+    }
+
+    public void removeLoading(){
+        loadingMark.setVisibility(View.GONE);
+    }
+
+    public void showLoginFail(){
+        Toast.makeText(this, "login failed", Toast.LENGTH_LONG).show();
+    }
+
     private class Connection extends AsyncTask {
 
+        boolean isLoginSuccess;
         Context context;
         User user;
 
         public Connection(Context context, User user){
             this.context = context;
             this.user = user;
+            this.isLoginSuccess = false;
         }
 
         @Override
@@ -81,10 +123,13 @@ public class LoginActivity extends AppCompatActivity {
                     editor.putInt("USER_ID", userData.getId());
                     editor.commit();
 
+
+
+                    isLoginSuccess = true;
                     //i.putExtra("USER_ID", userData.getId());
                     context.startActivity(i);
                 }else{
-                        Toast.makeText(context, "login failed", Toast.LENGTH_LONG).show();
+
                     }
                     //i.putExtra(SIGNUP_RESULT, SIGNUP_RESULT_FAIL);
 
@@ -93,6 +138,19 @@ public class LoginActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
             return null;
+        }
+
+        @Override
+        protected void onPostExecute(Object o) {
+            super.onPostExecute(o);
+
+            ((LoginActivity)context).removeLoading();
+
+            if(isLoginSuccess){
+
+            }else{
+                ((LoginActivity)context).showLoginFail();
+            }
         }
     }
 }

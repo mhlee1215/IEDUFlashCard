@@ -55,6 +55,8 @@ public class MenuAdapter extends BaseAdapter {
         rowView = inflater.inflate(R.layout.activity_menu_list_item, null);
         TextView viewMain =(TextView) rowView.findViewById(R.id.textViewMain);
         viewMain.setText(this.wordbookList.get(position).getName());
+        TextView viewCount =(TextView) rowView.findViewById(R.id.textViewCount);
+        viewCount.setText("111");
         rowView.setId(this.wordbookList.get(position).getId());
 
 
