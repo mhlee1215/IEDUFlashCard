@@ -95,7 +95,7 @@ public class SignupActivity extends AppCompatActivity {
             try {
                 boolean result = UserService.addUser(user);
 
-                Intent i = new Intent(context, MainActivity.class);
+                Intent i = new Intent(context, LoginActivity.class);
                 if(result){
                     i.putExtra(SIGNUP_RESULT, SIGNUP_RESULT_SUCCESS);
                 }else{
