@@ -68,8 +68,8 @@ public class LoginActivity extends AppCompatActivity {
         String userName = loginusernameEditText.getText().toString();
         EditText loginpasswordEditText = (EditText) findViewById(R.id.loginpassword);
         String password = loginpasswordEditText.getText().toString();
-        System.out.println("loginusername:" + userName);
-        System.out.println("loginpassword" + password);
+        System.out.println("loginusername: " + userName);
+        System.out.println("loginpassword: " + password);
 
         User user = new User();
         user.setEmail(loginusernameEditText.getText().toString());
