@@ -1,5 +1,6 @@
 package com.flashcard.iedu.flashcard;
 
+import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -7,8 +8,10 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -44,10 +47,12 @@ public class MenuActivity extends AppCompatActivity {
         // Make sure the toolbar exists in the activity and is not null
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(actionBarTitle);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(false);
+        getSupportActionBar().setLogo(R.drawable.ic_logo);
 
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setLogo(R.mipmap.ic_launcher);
-        getSupportActionBar().setDisplayUseLogoEnabled(true);
+        getSupportActionBar().setDisplayUseLogoEnabled(false);
 
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
@@ -59,39 +64,54 @@ public class MenuActivity extends AppCompatActivity {
         //WordBookService.getWordBookList(1);
 
 
-        Integer newInteger;
-//        if (savedInstanceState == null) {
-//            Bundle extras = getIntent().getExtras();
-//            if (extras == null) {
-//                newInteger = null;
-//            } else {
-//                newInteger = extras.getInt("USER_ID");
-//            }
-//        } else {
-//            newInteger = (Integer) savedInstanceState.getSerializable("USER_ID");
-//
-//        }
-//
-//        System.out.println("MENUACTIVITY_USERID:"+newInteger);
-
+        Integer userId;
         SharedPreferences pref = getApplicationContext().getSharedPreferences("IEDUPref", 0); // 0 - for private mode
-        newInteger = pref.getInt("USER_ID", -1);
-        System.out.println("MENUACTIVITY_USERID:"+newInteger);
+        userId = pref.getInt("USER_ID", -1);
+        System.out.println("MENUACTIVITY_USERID:"+userId);
 
-        adapter = new MenuAdapter(this, wordbookList, newInteger);
+        adapter = new MenuAdapter(this, wordbookList, userId);
         lv = (ListView) findViewById(R.id.ListView);
         lv.setAdapter(adapter);
 
-        getWordBooks(newInteger);
+        getWordBooks(userId);
 
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_actionbar, menu);
+        getMenuInflater().inflate(R.menu.menu_actionbar_options, menu);
 
-        return true;
+//        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+//        SearchView searchView = (SearchView) menu.findItem(R.id.menu_search).getActionView();
+//        // Assumes current activity is the searchable activity
+//        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+//        searchView.setIconifiedByDefault(false); // Do not iconify the widget; expand it by default
+//
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    /**
+     * On selecting action bar icons
+     * */
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Take appropriate action for each action item click
+        switch (item.getItemId()) {
+            case R.id.action_search:
+                // search action
+                System.out.println("search clicked");
+                return true;
+            case R.id.action_setting:
+                // location found
+                System.out.println("setting clicked");
+                Intent i = new Intent(context, SettingActivity.class);
+                context.startActivity(i);
+
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     public void sendMessage (View view) {

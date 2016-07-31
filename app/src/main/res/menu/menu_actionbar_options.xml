@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/action_search"
+        android:icon="@drawable/ic_list_remove"
+        android:title="search"
+        app:showAsAction="ifRoom">
+    </item>
+
+    <!-- Location Found -->
+    <item android:id="@+id/action_setting"
+        android:icon="@drawable/ic_settings_black_48dp"
+        android:title="setting"
+        app:showAsAction="ifRoom" />
+
+    <!-- Refresh -->
+    <!--<item android:id="@+id/action_refresh"-->
+        <!--android:icon="@drawable/ic_action_info"-->
+        <!--android:title="action_refresh"-->
+        <!--app:showAsAction="ifRoom" />-->
+
+    <!--&lt;!&ndash; Help &ndash;&gt;-->
+    <!--<item android:id="@+id/action_help"-->
+        <!--android:icon="@drawable/ic_action_photo"-->
+        <!--android:title="action_help"-->
+        <!--app:showAsAction="never"/>-->
+
+    <!--&lt;!&ndash; Check updates &ndash;&gt;-->
+    <!--<item android:id="@+id/action_check_updates"-->
+        <!--android:icon="@drawable/ic_favorite_black_48dp"-->
+        <!--android:title="action_check_updates"-->
+        <!--app:showAsAction="never" />-->
+</menu>

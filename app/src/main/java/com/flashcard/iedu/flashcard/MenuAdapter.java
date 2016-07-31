@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -59,6 +60,36 @@ public class MenuAdapter extends BaseAdapter {
         viewCount.setText(this.wordbookList.get(position).getSize()+"");
         rowView.setId(this.wordbookList.get(position).getId());
 
+        Button btnFavorite = (Button) rowView.findViewById(R.id.button_favorite);
+        OnClickListener btnListener = new OnClickListener(){
+            int wordbookId;
+            int wordId;
+
+            public void setProperty(int wordBookId, int wordId){
+                this.wordbookId = wordBookId;
+                this.wordId = wordId;
+            }
+
+            @Override
+            public void onClick(View v) {
+                System.out.println("Click! Favorite");
+            }
+        };
+//
+//        btnFavorite.setOnClickListener(new OnClickListener(){
+//            int wordbookId;
+//            int wordId;
+//
+//            public void setProperty(int wordBookId, int wordId){
+//                this.wordbookId = wordBookId;
+//                this.wordId = wordId;
+//            }
+//
+//            @Override
+//            public void onClick(View v) {
+//                System.out.println("Click! Favorite");
+//            }
+//        }.setProperty(10, 10));
 
 
         rowView.setOnClickListener(new OnClickListener() {
