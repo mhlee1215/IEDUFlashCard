@@ -9,6 +9,12 @@
     </item>
 
     <!-- Location Found -->
+
+    <item android:id="@+id/action_import"
+        android:icon="@drawable/ic_settings_black_48dp"
+        android:title="setting"
+        app:showAsAction="ifRoom" />
+
     <item android:id="@+id/action_setting"
         android:icon="@drawable/ic_settings_black_48dp"
         android:title="setting"
