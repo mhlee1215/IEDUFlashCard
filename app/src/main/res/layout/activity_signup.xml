@@ -40,12 +40,14 @@
             android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="textPassword"
             android:layout_below="@id/email"
             android:hint="@string/password" />
         <EditText
             android:id="@+id/passwordagain"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="textPassword"
             android:layout_below="@id/password"
             android:hint="@string/passwordagain" />
         <CheckBox
@@ -57,8 +59,10 @@
             android:layout_marginTop="10dp"
             android:layout_below="@id/passwordagain" />
         <Button
+            android:id="@+id/finalsignupbutton"
             android:layout_width="300dp"
             android:layout_height="75dp"
+            android:enabled="false"
             android:layout_centerHorizontal="true"
             android:text="SIGN UP"
             android:layout_below="@id/agreement"

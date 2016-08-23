@@ -9,4 +9,40 @@
     <color name="font_color_card_info">#C0C0C0</color>
     <color name="dialog_background">#FFFFFF</color>
     <color name="list_overflow_background">#484848</color>
+
+    <color name="onyx">#0c101c</color>
+    <color name="dark_jungle_green3">#101627</color>
+    <color name="dark_jungle_green1">#13192c</color>
+    <color name="dark_jungle_green4">#161c2f</color>
+    <color name="dark_jungle_green">#172038</color>
+    <color name="dark_jungle_green2">#1a2137</color>
+    <color name="medium_jungle_green">#232532</color>
+    <color name="medium_jungle_green2">#2a2d36</color>
+    <color name="medium_jungle_green1">#2e2e2f</color>
+    <color name="charcoal">#303d51</color>
+    <color name="outer_space1">#414963</color>
+    <color name="outer_space">#444444</color>
+    <color name="tuscan_red1">#684252</color>
+    <color name="tuscan_red">#744757</color>
+    <color name="light_slate_gray">#77819e</color>
+    <color name="manatee">#979797</color>
+    <color name="rich_maroon">#a62b5d</color>
+    <color name="dark_gray2">#a6a6a6</color>
+    <color name="lavender_gray">#bcc1d8</color>
+    <color name="pale_aqua">#bcc5e2</color>
+    <color name="silver">#bebebe</color>
+    <color name="timberwolf">#d8d8d8</color>
+    <color name="cerise_pink">#ff2f79</color>
+    <color name="orange_peel">#ff9900</color>
+    <color name="white">#ffffff</color>
+    <color name="transparent">#00000000</color>
+    <color name="light_gray_header_color">#646663</color>
+
+    <color name="backgroundColor">#E8E8E0</color>
+    <color name="backgroundColorPress">#DBDBD3</color>
+    <color name="red">#FF3B00</color>
+    <!--<color name="green">#FF3B00</color>-->
+    <color name="red_press">#990000</color>
+    <color name="dark_gray">#4C535B</color>
+    <color name="dark_gray_press">#ff7e8a97</color>
 </resources>

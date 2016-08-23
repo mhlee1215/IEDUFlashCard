@@ -11,38 +11,30 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivity" >
-
-        </activity>
-
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/title_activity_menu"
-            android:theme="@style/AppTheme.NoActionBar" >
+        <activity android:name=".LoginActivity" android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_menu"
+             />
         <activity
             android:name=".SignupActivity"
             android:label="@string/title_activity_signup"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".MenuActivity"
             android:label="@string/title_activity_menu"
-            android:theme="@style/AppTheme.NoActionBar" />
+            ></activity>
         <activity
             android:name=".samples.tab.CollectionDemoActivity"
             android:label="@string/demo_collection" />
         <activity
             android:name=".samples.flip.MainActivity"
-            android:label="@string/app_name" >
-
-
-        </activity>
+            android:label="@string/app_name" />
         <activity
             android:name=".samples.flip.CrossfadeActivity"
             android:label="@string/title_crossfade"
@@ -88,7 +80,8 @@
                 android:value=".samples.flip.MainActivity" />
         </activity>
         <activity android:name=".WordBookActivity" />
-        <activity android:name=".WordBookListActivity" />
+        <activity android:name=".WordBookListActivity"></activity>
+        <activity android:name=".SearchActivity"></activity>
         <activity android:name=".WordActivity" />
         <activity android:name=".MatchActivity" />
         <activity android:name=".SettingActivity" />
@@ -112,11 +105,18 @@
             android:name=".samples.tab.TabDemoActivity"
             android:label="@string/app_name" />
         <activity android:name=".samples.serverConn.ServiceTestActivity" />
-        <activity android:name=".samples.dynamic_list.ListViewDemo"></activity>
+        <activity android:name=".samples.dynamic_list.ListViewDemo" />
+        <activity android:name=".CardListMainActivity"></activity>
+        <activity android:name=".QuizActivity" />
+        <!--
+             ATTENTION: This was auto-generated to add Google Play services to your project for
+             App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
+        -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
 
-        <activity android:name=".CardListMainActivity">
 
-        </activity>
     </application>
 
 </manifest>

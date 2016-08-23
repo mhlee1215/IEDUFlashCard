@@ -18,6 +18,8 @@ import android.widget.Toast;
 
 import com.flashcard.iedu.flashcard.R;
 
+import edu.iedu.flashcard.dao.domain.Word;
+
 public class CardFragment extends Fragment {
 
 	public static final String _OF_ = " of ";
@@ -44,9 +46,9 @@ public class CardFragment extends Fragment {
 	private View mCardView;
 	private int mFontSize;
 
-	private Card card;
+	private Word card;
 
-	public static CardFragment newInstance(int wordIndex, int totalWords, int fontSize, Card card) {
+	public static CardFragment newInstance(int wordIndex, int totalWords, int fontSize, Word card) {
 
 		CardFragment pageFragment = new CardFragment();
 		pageFragment.setFontSize(fontSize);
@@ -74,7 +76,7 @@ public class CardFragment extends Fragment {
 
 		mCardView = inflater.inflate(R.layout.card_fragment, container, false);
 
-		mCardQuestion = card.getWord();//getArguments().getString(CARD_QUESTION);
+		mCardQuestion = card.getName();//getArguments().getString(CARD_QUESTION);
 		mCardAnswer = card.getMeaning();//getArguments().getString(CARD_ANSWER);
 		mCardPosition = card.getPosition();//getArguments().getInt(CARD_POSITION_KEY);
 
@@ -220,7 +222,7 @@ public class CardFragment extends Fragment {
 		view.startAnimation(flip1);
 	}
 
-	public void setCard(Card card){
+	public void setCard(Word card){
 		this.card = card;
 	}
 }

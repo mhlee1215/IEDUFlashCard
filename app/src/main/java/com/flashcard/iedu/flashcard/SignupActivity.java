@@ -7,7 +7,12 @@ import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import com.flashcard.iedu.flashcard.R;
 
@@ -42,6 +47,21 @@ public class SignupActivity extends AppCompatActivity {
     }
 
     public void onCheckboxClicked(View view) {
+        // Is the view now checked?
+        Button btnLogin = (Button)this.findViewById(R.id.finalsignupbutton);
+        System.out.println("button?: "+btnLogin);
+        boolean checked = ((CheckBox) view).isChecked();
+        switch (view.getId()) {
+            case R.id.agreement:
+                if (checked) {
+                    btnLogin.setEnabled(true);
+                }
+                else {
+                    btnLogin.setEnabled(false);
+                }
+                break;
+
+        }
     }
 
     public void goSignup(View view){
@@ -75,7 +95,7 @@ public class SignupActivity extends AppCompatActivity {
             try {
                 boolean result = UserService.addUser(user);
 
-                Intent i = new Intent(context, MainActivity.class);
+                Intent i = new Intent(context, LoginActivity.class);
                 if(result){
                     i.putExtra(SIGNUP_RESULT, SIGNUP_RESULT_SUCCESS);
                 }else{
