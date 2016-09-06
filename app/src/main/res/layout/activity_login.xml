@@ -26,11 +26,11 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="vertical"
-            android:paddingBottom="20dp"
+            android:paddingBottom="40dp"
             >
             <ImageView
-                android:layout_width="250dp"
-                android:layout_height="250dp"
+                android:layout_width="240dp"
+                android:layout_height="240dp"
                 android:src="@drawable/ic_logo"
                 />
         </LinearLayout>
@@ -103,7 +103,7 @@
             android:orientation="vertical"
             >
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:orientation="horizontal"
@@ -111,7 +111,7 @@
                 >
                 <Button
                     android:id="@+id/gologin"
-                    android:layout_width="400dp"
+                    android:layout_width="fill_parent"
                     android:layout_height="40dp"
                     android:layout_centerHorizontal="true"
                     android:textStyle="bold"
@@ -136,7 +136,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:orientation="horizontal"
@@ -144,7 +144,7 @@
                 >
                 <Button
                     android:id="@+id/gosignup"
-                    android:layout_width="400dp"
+                    android:layout_width="fill_parent"
                     android:layout_height="40dp"
                     android:layout_centerHorizontal="true"
                     android:textStyle="bold"
