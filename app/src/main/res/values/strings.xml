@@ -123,4 +123,6 @@
 
     <string name="email_feedback_chooser">Send your email in:</string>
     <string name="email_feedback_subject">Flash Cards: User Feedback</string>
+
+    <string name="facebook_app_id">1843542015865175</string>
 </resources>

@@ -2,6 +2,7 @@ package com.flashcard.iedu.flashcard;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -16,6 +17,7 @@ import com.flashcard.iedu.flashcard.R;
 import java.util.List;
 
 import edu.iedu.flashcard.dao.domain.WordBook;
+import edu.iedu.flashcard.service.WordBookService;
 
 
 public class MenuAdapter extends BaseAdapter {
@@ -50,7 +52,7 @@ public class MenuAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
 
         View rowView;
         rowView = inflater.inflate(R.layout.activity_menu_list_item, null);
@@ -60,7 +62,14 @@ public class MenuAdapter extends BaseAdapter {
         viewCount.setText(this.wordbookList.get(position).getSize()+"");
         rowView.setId(this.wordbookList.get(position).getId());
 
-        Button btnFavorite = (Button) rowView.findViewById(R.id.button_favorite);
+        final Button btnFavorite = (Button) rowView.findViewById(R.id.button_favorite);
+
+        System.out.println("isfavorite:"+wordbookList.get(position).getIsfavorite());
+        if("Y".equalsIgnoreCase(wordbookList.get(position).getIsfavorite())){
+            btnFavorite.setBackground(context.getResources().getDrawable(R.drawable.ic_favorite_black_48dp));
+        }
+
+
         OnClickListener btnListener = new OnClickListener(){
             int wordbookId;
             int wordId;
@@ -73,8 +82,20 @@ public class MenuAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 System.out.println("Click! Favorite");
+                if("Y".equalsIgnoreCase(wordbookList.get(position).getIsfavorite())){
+                    wordbookList.get(position).setIsfavorite("N");
+                    btnFavorite.setBackground(context.getResources().getDrawable(R.drawable.button_heart));
+                }else{
+                    wordbookList.get(position).setIsfavorite("Y");
+                    btnFavorite.setBackground(context.getResources().getDrawable(R.drawable.ic_favorite_black_48dp));
+                }
+
+                WordBookService.updateWordBook(wordbookList.get(position));
             }
+
         };
+
+        btnFavorite.setOnClickListener(btnListener);
 //
 //        btnFavorite.setOnClickListener(new OnClickListener(){
 //            int wordbookId;

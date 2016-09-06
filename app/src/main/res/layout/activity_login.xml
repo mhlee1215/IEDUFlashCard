@@ -14,10 +14,11 @@
     android:gravity="center"
     >
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
+        android:orientation="vertical"
         >
         <TextView
             android:id="@+id/loginpagetitle"
@@ -26,26 +27,60 @@
             android:text="LOG IN"
             android:textSize="50dp"
             android:textStyle="bold"
+            android:paddingBottom="50dp"
             android:layout_centerHorizontal="true"
             />
 
-        <EditText
-            android:id="@+id/loginusername"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Username"
-            android:layout_below="@+id/loginpagetitle"
-            android:text="pink2@gmail.com" />
+            android:paddingBottom="10dp"
+            >
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="Username "
+                android:textSize="20dp"
+                android:textStyle="bold"
+                />
 
-        <EditText
-            android:id="@+id/loginpassword"
+            <EditText
+                android:id="@+id/loginusername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Username"
+                android:padding="5dp"
+                android:background="@drawable/textview_border"
+                android:layout_below="@+id/loginpagetitle"
+                android:text="pink3@gmail.com" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Password"
-            android:inputType="textPassword"
-            android:layout_below="@+id/loginusername"
-            android:layout_alignParentStart="true"
-            android:text="pink2" />
+            android:paddingBottom="20dp"
+            >
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="Password "
+                android:textSize="20dp"
+                android:textStyle="bold"
+                />
+
+            <EditText
+                android:id="@+id/loginpassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:padding="5dp"
+                android:background="@drawable/textview_border"
+                android:inputType="textPassword"
+                android:layout_below="@+id/loginusername"
+                android:layout_alignParentStart="true"
+                android:text="pink" />
+        </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -70,10 +105,18 @@
                 android:text="SIGN UP"
                 />
 
+          <!--  <com.facebook.login.widget.LoginButton
+                android:id="@+id/fb_login_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp" />
+           -->
         </LinearLayout>
 
 
-    </RelativeLayout>
+    </LinearLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
