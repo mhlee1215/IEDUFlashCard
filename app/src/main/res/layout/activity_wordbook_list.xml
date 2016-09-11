@@ -57,7 +57,7 @@
                 android:layout_height="match_parent"
                 android:text="Flashcards"
                 android:onClick="sendMessage"
-                android:background="@drawable/button_1"
+                android:background="@drawable/button_2"
                 android:layout_weight="1"
                 android:id="@+id/button_flashcard"
                 android:layout_marginRight="20dp"/>
@@ -66,7 +66,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:text="Learn"
-                android:background="@drawable/button_1"
+                android:background="@drawable/button_2"
                 android:onClick="sendMessage1"
                 android:layout_weight="1"
                 android:id="@+id/button_learn"
@@ -78,7 +78,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="Multiple"
-                android:background="@drawable/button_1"
+                android:background="@drawable/button_2"
                 android:onClick="sendMessage2"
                 android:id="@+id/button_multiple"
                 android:layout_gravity="right" />
