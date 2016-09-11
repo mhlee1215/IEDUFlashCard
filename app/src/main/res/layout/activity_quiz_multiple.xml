@@ -1,0 +1,32 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".WordBookListActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/wordbook_toolbar"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ToolbarTheme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleTextColor="@android:color/white"
+        android:background="?attr/colorPrimary"
+        app:titleTextAppearance="@style/Toolbar.TitleText"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        >
+    </android.support.v7.widget.Toolbar>
+
+    <fragment android:name="com.flashcard.iedu.flashcard.samples.fragment.MyFragmentOne"
+        android:id="@+id/fragment_container_one"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
+
+
+
+
+
+</LinearLayout>

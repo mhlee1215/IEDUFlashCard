@@ -59,7 +59,7 @@
                 android:onClick="sendMessage"
                 android:background="@drawable/button_1"
                 android:layout_weight="1"
-                android:id="@+id/button3"
+                android:id="@+id/button_flashcard"
                 android:layout_marginRight="20dp"/>
 
             <Button
@@ -69,7 +69,7 @@
                 android:background="@drawable/button_1"
                 android:onClick="sendMessage1"
                 android:layout_weight="1"
-                android:id="@+id/button4"
+                android:id="@+id/button_learn"
                 android:layout_gravity="center"
                 android:layout_marginRight="20dp" />
 
@@ -77,10 +77,10 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Match"
+                android:text="Multiple"
                 android:background="@drawable/button_1"
                 android:onClick="sendMessage2"
-                android:id="@+id/button5"
+                android:id="@+id/button_multiple"
                 android:layout_gravity="right" />
 
 

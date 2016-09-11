@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp" />
 
-    <fragment android:name="com.flashcard.iedu.flashcard.samples.fragment.MyFragmentOne"
+    <fragment android:name="com.flashcard.iedu.flashcard.samples.fragment.MyFragmentTwo"
         android:id="@+id/fragment_container_two"
         android:layout_weight="1"
         android:layout_width="match_parent"
