@@ -7,6 +7,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
@@ -29,6 +30,7 @@ import edu.iedu.flashcard.service.WordService;
 
 public class WordBookListActivity extends AppCompatActivity {
 
+    String actionBarTitle = "WordBook List";
     int wordbookId;
     String wordbookName;
     ListView lv;
@@ -46,6 +48,18 @@ public class WordBookListActivity extends AppCompatActivity {
         StrictMode.setThreadPolicy(policy);
 
         context = this;
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.wordbook_toolbar);
+        // Sets the Toolbar to act as the ActionBar for this Activity window.
+        // Make sure the toolbar exists in the activity and is not null
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle(actionBarTitle);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(false);
+        getSupportActionBar().setLogo(R.drawable.ic_logo);
+
+        getSupportActionBar().setDisplayUseLogoEnabled(false);
 
         wordList = new ArrayList<Word>();//
         //WordService.getWordList(1);

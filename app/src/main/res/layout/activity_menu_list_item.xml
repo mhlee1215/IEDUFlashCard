@@ -55,7 +55,7 @@
                 android:layout_height="25dp"
                 android:layout_marginRight="20dp"
                 android:background="@drawable/button_heart"
-                android:id="@+id/button6"/>
+                android:id="@+id/button_favorite"/>
         </LinearLayout>
 
     </LinearLayout>

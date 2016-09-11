@@ -6,6 +6,11 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:actionOverflowButtonStyle">@style/MyActionButtonOverflow</item>
+    </style>
+
+    <style name="MyActionButtonOverflow" parent="android:style/Widget.Holo.ActionButton.Overflow">
+        <item name="android:src">@drawable/ic_more_vert_white_48dp</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -87,6 +92,5 @@
         <item name="android:textSize">21sp</item>
         <item name="android:textStyle">bold</item>
     </style>
-
 
 </resources>

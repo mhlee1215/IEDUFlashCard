@@ -1,5 +1,5 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_name">FlashCard</string>
+    <string name="app_name">CRAMABLE</string>
     <string name="title_activity_signup">SignupActivity</string>
     <string name="title_activity_front">FrontActivity</string>
     <string name="title_activity_menu">MenuActivity</string>
@@ -123,4 +123,6 @@
 
     <string name="email_feedback_chooser">Send your email in:</string>
     <string name="email_feedback_subject">Flash Cards: User Feedback</string>
+
+    <string name="facebook_app_id">1843542015865175</string>
 </resources>

@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 
 import com.flashcard.iedu.flashcard.R;
 import com.flashcard.iedu.flashcard.samples.slideViewer.DepthPageTransformer;
@@ -23,6 +24,7 @@ import fr.castorflex.android.verticalviewpager.VerticalViewPager;
 
 public class CardListMainActivity extends AppCompatActivity {
 
+    String actionBarTitle = "FlashCard";
     int wordbookId;
     VerticalViewPager mViewPager;
     CardListPagerAdapter cardListPagerAdapter;
@@ -31,6 +33,18 @@ public class CardListMainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card_list_main);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.flashcard_toolbar);
+        // Sets the Toolbar to act as the ActionBar for this Activity window.
+        // Make sure the toolbar exists in the activity and is not null
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle(actionBarTitle);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(false);
+        getSupportActionBar().setLogo(R.drawable.ic_logo);
+
+        getSupportActionBar().setDisplayUseLogoEnabled(false);
 
         //int newInteger;
         if (savedInstanceState == null) {

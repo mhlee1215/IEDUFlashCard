@@ -14,66 +14,158 @@
     android:gravity="center"
     >
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
+        android:orientation="vertical"
         >
-        <TextView
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="40dp"
+            >
+            <ImageView
+                android:layout_width="240dp"
+                android:layout_height="240dp"
+                android:src="@drawable/ic_logo"
+                />
+        </LinearLayout>
+        <!--<TextView
             android:id="@+id/loginpagetitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="LOG IN"
             android:textSize="50dp"
             android:textStyle="bold"
+            android:paddingBottom="50dp"
             android:layout_centerHorizontal="true"
-            />
+            />-->
 
-        <EditText
-            android:id="@+id/loginusername"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Username"
-            android:layout_below="@+id/loginpagetitle"
-            android:text="pink2@gmail.com" />
+            android:paddingBottom="10dp"
+            >
+            <TextView
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:text="Username "
+                android:textSize="20dp"
+                android:textStyle="bold"
+                />
 
-        <EditText
-            android:id="@+id/loginpassword"
+            <EditText
+                android:id="@+id/loginusername"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="Username"
+                android:padding="5dp"
+                android:background="@drawable/textview_border"
+                android:layout_below="@+id/loginpagetitle"
+                android:text="pink3@gmail.com" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Password"
-            android:inputType="textPassword"
-            android:layout_below="@+id/loginusername"
-            android:layout_alignParentStart="true"
-            android:text="pink2" />
+            android:paddingBottom="30dp"
+            >
+            <TextView
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:text="Password "
+                android:textSize="20dp"
+                android:textStyle="bold"
+                />
+
+            <EditText
+                android:id="@+id/loginpassword"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="Password"
+                android:padding="5dp"
+                android:background="@drawable/textview_border"
+                android:inputType="textPassword"
+                android:layout_below="@+id/loginusername"
+                android:layout_alignParentStart="true"
+                android:text="pink" />
+        </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:layout_below="@+id/loginpassword"
+            android:orientation="vertical"
             >
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingBottom="25dp"
+                >
+                <Button
+                    android:id="@+id/gologin"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:layout_centerHorizontal="true"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:background="@drawable/button_2"
+                    android:text="LOG IN"
+                    />
+            </LinearLayout>
 
-            <Button
-                android:id="@+id/gologin"
-                android:layout_width="150dp"
-                android:layout_height="60dp"
-                android:layout_centerHorizontal="true"
-                android:text="LOG IN"
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingBottom="25dp"
+                >
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:background="#000000"
                 />
+            </LinearLayout>
 
-            <Button
-                android:id="@+id/gosignup"
-                android:layout_width="150dp"
-                android:layout_height="60dp"
-                android:layout_centerHorizontal="true"
-                android:text="SIGN UP"
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingRight="0dp"
+                >
+                <Button
+                    android:id="@+id/gosignup"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:layout_centerHorizontal="true"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:background="@drawable/button_2"
+                    android:text="SIGN UP"
                 />
+            </LinearLayout>
 
+          <!--  <com.facebook.login.widget.LoginButton
+                android:id="@+id/fb_login_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp" />
+           -->
         </LinearLayout>
 
 
-    </RelativeLayout>
+    </LinearLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
