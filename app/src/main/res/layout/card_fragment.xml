@@ -3,8 +3,8 @@
     android:id="@+id/relativeLayoutCard"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/notes"
-    android:keepScreenOn="true" >
+    android:background="@drawable/rectangle2"
+    android:keepScreenOn="true">
 
     <TextView
         android:id="@+id/textViewQuestion"
