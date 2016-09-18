@@ -3,23 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item android:id="@+id/action_search"
-        android:icon="@drawable/ic_list_remove"
+        android:icon="@drawable/ic_search_white_48dp"
         android:title="search"
         app:showAsAction="ifRoom">
     </item>
 
     <!-- Location Found -->
 
-    <item android:id="@+id/action_import"
-        android:icon="@drawable/ic_settings_black_48dp"
+    <item android:id="@+id/action_setting"
+        android:icon="@drawable/ic_settings_white_48dp"
         android:title="setting"
         app:showAsAction="ifRoom" />
 
+    <!--
     <item android:id="@+id/action_setting"
         android:icon="@drawable/ic_settings_black_48dp"
         android:title="setting"
         app:showAsAction="ifRoom" />
-
+-->
     <!-- Refresh -->
     <!--<item android:id="@+id/action_refresh"-->
         <!--android:icon="@drawable/ic_action_info"-->
