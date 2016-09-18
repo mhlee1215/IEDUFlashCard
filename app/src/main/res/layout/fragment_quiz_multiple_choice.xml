@@ -4,14 +4,16 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#ffffff"
-    android:gravity="center"
+    android:gravity="top"
     >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="horizontal"
         android:layout_height="wrap_content"
-        android:gravity="center"
+        android:gravity="left|top"
+        android:paddingLeft="50dp"
+        android:layout_marginBottom="50dp"
         >
 
         <TextView
@@ -19,7 +21,10 @@
             android:id="@+id/sampleTextView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="This is fragment No.1"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="TERM"
+            android:padding="10dp"
+            android:background="@drawable/textview_border"
             android:textStyle="bold" />
     </LinearLayout>
 
@@ -40,15 +45,15 @@
             >
 
             <Button
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_width="180dp"
                 android:id="@+id/sampleButton1"
                 android:text="Button123">
             </Button>
 
             <Button
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_width="180dp"
                 android:id="@+id/sampleButton2"
                 android:text="Button123">
             </Button>
@@ -62,15 +67,15 @@
             >
 
             <Button
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_width="180dp"
                 android:id="@+id/sampleButton3"
                 android:text="Button123">
             </Button>
 
             <Button
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_width="180dp"
                 android:id="@+id/sampleButton4"
                 android:text="Button123">
             </Button>

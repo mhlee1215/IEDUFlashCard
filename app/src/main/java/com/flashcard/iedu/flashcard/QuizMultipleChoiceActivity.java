@@ -9,7 +9,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import com.flashcard.iedu.flashcard.samples.fragment.MyFragmentOne;
 
 public class QuizMultipleChoiceActivity extends AppCompatActivity {
 

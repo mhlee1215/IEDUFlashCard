@@ -19,12 +19,50 @@
         >
     </android.support.v7.widget.Toolbar>
 
-    <fragment android:name="com.flashcard.iedu.flashcard.samples.fragment.MyFragmentOne"
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:id="@+id/progressBar"
+        android:layout_gravity="center_horizontal"
+        android:progress="@integer/card_flip_time_half"
+        android:layout_weight="0.5" />
+
+
+    <fragment android:name="com.flashcard.iedu.flashcard.QuizMuiltipleChoiceFragment"
         android:id="@+id/fragment_container_one"
-        android:layout_weight="1"
+        android:layout_weight="5"
         android:layout_width="match_parent"
         android:layout_height="0dp" />
 
+    <LinearLayout
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="30dp"
+        android:paddingBottom="30dp"
+        android:gravity="top|center_horizontal"
+        >
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:textSize="18dp"
+            android:padding="5dp"
+            android:layout_marginRight="40dp"
+            android:background="@drawable/button_2"
+            android:text="Submit"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:padding="5dp"
+            android:textSize="18dp"
+            android:background="@drawable/button_2"
+            android:text="Skip"
+            />
+    </LinearLayout>
 
 
 

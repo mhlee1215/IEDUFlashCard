@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.flashcard.iedu.flashcard.samples.fragment.MyFragmentTest;
 
 public class QuizMuiltipleChoiceFragment extends Fragment {
-    String text;
+    String text = "";
     private View mView;
     static MyFragmentTest parent;
 
@@ -35,7 +35,7 @@ public class QuizMuiltipleChoiceFragment extends Fragment {
         mView = inflater.inflate(R.layout.fragment_quiz_multiple_choice, container, false);
 
         TextView tView = (TextView)mView.findViewById(R.id.sampleTextView1);
-        tView.setText(text);
+        tView.setText(text+"SAMPLE!");
         Button btn = (Button)mView.findViewById(R.id.sampleButton1);
 
         btn.setOnClickListener(new View.OnClickListener() {
