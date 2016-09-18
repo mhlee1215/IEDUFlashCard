@@ -6,12 +6,14 @@ import android.os.StrictMode;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.flashcard.iedu.flashcard.samples.fragment.MyFragmentOne;
 
 public class QuizMultipleChoiceActivity extends AppCompatActivity {
 
+    String actionBarTitle = "Multiple Choice";
     Context context;
 
     @Override
@@ -24,17 +26,14 @@ public class QuizMultipleChoiceActivity extends AppCompatActivity {
 
         context = this;
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.wordbook_toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.multiple_toolbar);
         // Sets the Toolbar to act as the ActionBar for this Activity window.
         // Make sure the toolbar exists in the activity and is not null
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("HHHH");
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setTitle(actionBarTitle);
+        getSupportActionBar().setDisplayShowTitleEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(false);
-        getSupportActionBar().setLogo(R.drawable.ic_logo);
-
-        getSupportActionBar().setDisplayUseLogoEnabled(false);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         QuizMuiltipleChoiceFragment fQuiz = new QuizMuiltipleChoiceFragment();
         fQuiz.setText("HELLO!!!");
@@ -42,6 +41,17 @@ public class QuizMultipleChoiceActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragment_container_one, fQuiz).commit();
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
 

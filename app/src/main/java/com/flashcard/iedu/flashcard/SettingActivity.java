@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.preference.PreferenceActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 
 import com.flashcard.iedu.flashcard.R;
 
@@ -26,14 +27,23 @@ public class SettingActivity extends AppCompatActivity {
         // Make sure the toolbar exists in the activity and is not null
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(actionBarTitle);
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setDisplayShowTitleEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(false);
-        getSupportActionBar().setLogo(R.drawable.ic_logo);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        getSupportActionBar().setDisplayUseLogoEnabled(false);
 
 
         getFragmentManager().beginTransaction().replace(R.id.content_frame, new SettingFragment()).commit();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

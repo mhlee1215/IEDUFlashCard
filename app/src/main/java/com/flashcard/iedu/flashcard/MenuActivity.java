@@ -48,9 +48,12 @@ public class MenuActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(actionBarTitle);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(false);
-        getSupportActionBar().setLogo(R.drawable.ic_logo);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        //getSupportActionBar().setDisplayUseLogoEnabled(true);
+        //getSupportActionBar().setLogo(R.drawable.ic_logo);
+        getSupportActionBar().setIcon(R.drawable.logo_h); //shoudlbe 24 or 32 dp
+
 
         getSupportActionBar().setDisplayUseLogoEnabled(false);
 
