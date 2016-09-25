@@ -111,6 +111,7 @@ public class LoginActivity extends AppCompatActivity {
             try {
                 int result = UserService.login(user);
 
+
                 Intent i = new Intent(context, MenuActivity.class);
                 if(result == User.STATUS_LOGIN_SUCCESS){
                     User userQuery = new User();

@@ -119,11 +119,15 @@ public class WordBookListActivity extends AppCompatActivity {
         newtext.setText(wordbookName);
 
         TextView numbertext = (TextView) findViewById(R.id.textView2);
-        numbertext.setText(wordList.size() + "terms created by");
+        numbertext.setText(wordList.size() + " terms created by");
     }
 
 
-
+    public void startCard(){
+        Intent i = new Intent(WordBookListActivity.this, CardListMainActivity.class);
+        i.putExtra("WORDBOOK_ID", wordbookId);
+        startActivity(i);
+    }
 
 
 //    public void sendMessage(View view) {

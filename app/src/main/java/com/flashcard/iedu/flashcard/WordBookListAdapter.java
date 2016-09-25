@@ -62,8 +62,9 @@ public class WordBookListAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                TextView viewMain =(TextView) v.findViewById(R.id.textViewMain);
-                Toast.makeText(context, "You Clicked " + viewMain.getText(), Toast.LENGTH_LONG).show();
+                //TextView viewMain =(TextView) v.findViewById(R.id.textViewMain);
+                //Toast.makeText(context, "You Clicked " + viewMain.getText(), Toast.LENGTH_LONG).show();
+                ((WordBookListActivity)context).startCard();
             }
         });
         return rowView;

@@ -22,16 +22,17 @@
     <ProgressBar
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
-        android:layout_height="5dp"
-        android:id="@+id/progressBar"
+        android:layout_height="4dp"
+        android:id="@+id/mc_progressBar"
         android:layout_gravity="center_horizontal"
-        android:progress="@integer/card_flip_time_half"
-        android:layout_weight="0.5" />
+        android:progress="10"
+        android:layout_marginBottom="40dp"
+        />
 
 
-    <fragment android:name="com.flashcard.iedu.flashcard.QuizMuiltipleChoiceFragment"
-        android:id="@+id/fragment_container_one"
-        android:layout_weight="5"
+    <FrameLayout
+        android:id="@+id/fragment_mc_container"
+        android:layout_weight="8"
         android:layout_width="match_parent"
         android:layout_height="0dp" />
 
@@ -41,11 +42,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="30dp"
-        android:paddingBottom="30dp"
+        android:paddingBottom="0dp"
         android:gravity="top|center_horizontal"
         >
 
         <Button
+            android:id="@+id/mc_button_submit"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:textSize="18dp"
@@ -55,6 +57,7 @@
             android:text="Submit"
             />
         <Button
+            android:id="@+id/mc_button_skip"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:padding="5dp"

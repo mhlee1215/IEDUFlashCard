@@ -188,8 +188,8 @@ public class CardFragment extends Fragment {
 			return;
 		}
 
-		final Animation flip1 = AnimationUtils.loadAnimation(view.getContext(), R.animator.flip1);
-		final Animation flip2 = AnimationUtils.loadAnimation(view.getContext(), R.animator.flip2);
+		final Animation flip1 = null;//AnimationUtils.loadAnimation(view.getContext(), R.animator.flip1);
+		final Animation flip2 = null;//AnimationUtils.loadAnimation(view.getContext(), R.animator.flip2);
 
 		flip1.setAnimationListener(new AnimationListener() {
 

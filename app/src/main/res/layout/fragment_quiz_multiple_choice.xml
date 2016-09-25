@@ -47,14 +47,14 @@
             <Button
                 android:layout_height="100dp"
                 android:layout_width="180dp"
-                android:id="@+id/sampleButton1"
+                android:id="@+id/btn_answer1"
                 android:text="Button123">
             </Button>
 
             <Button
                 android:layout_height="100dp"
                 android:layout_width="180dp"
-                android:id="@+id/sampleButton2"
+                android:id="@+id/btn_answer2"
                 android:text="Button123">
             </Button>
         </LinearLayout>
@@ -69,14 +69,14 @@
             <Button
                 android:layout_height="100dp"
                 android:layout_width="180dp"
-                android:id="@+id/sampleButton3"
+                android:id="@+id/btn_answer3"
                 android:text="Button123">
             </Button>
 
             <Button
                 android:layout_height="100dp"
                 android:layout_width="180dp"
-                android:id="@+id/sampleButton4"
+                android:id="@+id/btn_answer4"
                 android:text="Button123">
             </Button>
         </LinearLayout>
