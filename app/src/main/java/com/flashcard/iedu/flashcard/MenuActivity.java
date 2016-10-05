@@ -52,7 +52,7 @@ public class MenuActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         //getSupportActionBar().setDisplayUseLogoEnabled(true);
         //getSupportActionBar().setLogo(R.drawable.ic_logo);
-        getSupportActionBar().setIcon(R.drawable.logo_h); //shoudlbe 24 or 32 dp
+        getSupportActionBar().setIcon(R.drawable.logo_h2); //shoudlbe 24 or 32 dp
 
 
         getSupportActionBar().setDisplayUseLogoEnabled(false);
