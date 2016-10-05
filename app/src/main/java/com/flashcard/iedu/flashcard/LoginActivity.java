@@ -65,8 +65,11 @@ public class LoginActivity extends AppCompatActivity {
 
         //Button btnlogin = (Button) view.findViewById(R.id.LOG_IN_Button);
         EditText loginusernameEditText = (EditText) findViewById(R.id.loginusername);
+        loginusernameEditText.setEnabled(false);
+
         String userName = loginusernameEditText.getText().toString();
         EditText loginpasswordEditText = (EditText) findViewById(R.id.loginpassword);
+        loginpasswordEditText.setEnabled(false);
         String password = loginpasswordEditText.getText().toString();
         System.out.println("loginusername: " + userName);
         System.out.println("loginpassword: " + password);
@@ -146,6 +149,11 @@ public class LoginActivity extends AppCompatActivity {
             super.onPostExecute(o);
 
             ((LoginActivity)context).removeLoading();
+
+            EditText loginusernameEditText = (EditText) findViewById(R.id.loginusername);
+            loginusernameEditText.setEnabled(true);
+            EditText loginpasswordEditText = (EditText) findViewById(R.id.loginpassword);
+            loginpasswordEditText.setEnabled(true);
 
             if(isLoginSuccess){
 
