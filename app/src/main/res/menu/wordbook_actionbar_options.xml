@@ -2,28 +2,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:id="@+id/action_search"
-        android:icon="@drawable/ic_system_update_alt_white_48dp"
-        android:title="search"
-        app:showAsAction="ifRoom">
-    </item>
-
-    <!-- Location Found -->
     <item android:id="@+id/action_add"
         android:icon="@drawable/ic_add_circle_white_48dp"
         android:title="Add"
         app:showAsAction="ifRoom">
     </item>
 
-    <item android:id="@+id/action_setting"
-        android:icon="@drawable/ic_settings_white_48dp"
-        android:title="setting"
-        app:showAsAction="ifRoom" />
 
-    <item android:id="@+id/action_logout"
-        android:icon="@drawable/ic_exit_to_app_white_48dp"
-        android:title="Logout"
-        app:showAsAction="ifRoom" />
 
     <!--
     <item android:id="@+id/action_setting"

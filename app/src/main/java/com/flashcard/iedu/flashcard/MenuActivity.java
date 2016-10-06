@@ -109,13 +109,18 @@ public class MenuActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.action_search:
                 // search action
-                System.out.println("search clicked");
+                Intent searchActivity = new Intent(context, SearchActivity.class);
+                context.startActivity(searchActivity);
+                return true;
+            case R.id.action_add:
+                Intent wordbookEditActivity = new Intent(context, WordbookEditActivity.class);
+                context.startActivity(wordbookEditActivity);
                 return true;
             case R.id.action_setting:
                 // location found
-                System.out.println("setting clicked");
-                Intent i = new Intent(context, SettingActivity.class);
-                context.startActivity(i);
+
+                Intent settingActivity = new Intent(context, SettingActivity.class);
+                context.startActivity(settingActivity);
                 return true;
             case R.id.action_logout:
 
