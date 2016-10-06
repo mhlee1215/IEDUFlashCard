@@ -2,11 +2,13 @@ package com.flashcard.iedu.flashcard;
 
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
@@ -114,6 +116,33 @@ public class MenuActivity extends AppCompatActivity {
                 System.out.println("setting clicked");
                 Intent i = new Intent(context, SettingActivity.class);
                 context.startActivity(i);
+                return true;
+            case R.id.action_logout:
+
+                new AlertDialog.Builder(this)
+                        .setIcon(android.R.drawable.ic_dialog_alert)
+                        .setTitle("Log out")
+                        .setMessage("Is that okay to logout?")
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                SharedPreferences pref = getApplicationContext().getSharedPreferences("IEDUPref", 0); // 0 - for private mode
+                                SharedPreferences.Editor editor = pref.edit();
+                                editor.putInt("USER_ID", -1);
+                                editor.commit();
+
+                                Intent loginActivity = new Intent(context, LoginActivity.class);
+                                context.startActivity(loginActivity);
+                                //Stop the activity
+                                //YourClass.this.finish();
+                            }
+
+                        })
+                        .setNegativeButton("No", null)
+                        .show();
+
+
 
                 return true;
             default:

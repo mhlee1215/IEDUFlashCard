@@ -15,6 +15,11 @@
         android:title="setting"
         app:showAsAction="ifRoom" />
 
+    <item android:id="@+id/action_logout"
+        android:icon="@drawable/ic_exit_to_app_white_48dp"
+        android:title="Logout"
+        app:showAsAction="ifRoom" />
+
     <!--
     <item android:id="@+id/action_setting"
         android:icon="@drawable/ic_settings_black_48dp"
