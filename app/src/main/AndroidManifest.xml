@@ -124,8 +124,9 @@
 
         <activity android:name=".ImportActivity" />
         <activity android:name=".WordEditActivity" />
-        <activity android:name=".WordbookEditActivity"></activity>
-        <activity android:name=".samples.SwipeListView.ListViewExample"></activity>
+        <activity android:name=".WordbookEditActivity" />
+        <activity android:name=".samples.SwipeListView.ListViewExample" />
+        <activity android:name=".WordBookInfoActivity"></activity>
     </application>
 
 </manifest>

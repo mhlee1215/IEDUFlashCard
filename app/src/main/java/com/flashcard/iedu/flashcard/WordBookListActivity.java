@@ -225,6 +225,10 @@ public class WordBookListActivity extends AppCompatActivity {
                 Intent wordEditActivity = new Intent(context, WordEditActivity.class);
                 context.startActivity(wordEditActivity);
                 return true;
+            case R.id.action_info:
+                Intent wordInfoActivity = new Intent(context, WordBookInfoActivity.class);
+                context.startActivity(wordInfoActivity);
+                return true;
         }
 
         return super.onOptionsItemSelected(item);
