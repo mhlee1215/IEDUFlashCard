@@ -35,6 +35,7 @@
             android:inputType="textCapCharacters"
             android:textSize="25dp"
             android:textStyle="bold"
+            android:text="Wordbook Title"
             android:layout_gravity="center"
             />
 
@@ -43,49 +44,107 @@
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:textAlignment="center"
-            android:paddingBottom="10dp"
+            android:paddingBottom="20dp"
             android:ems="10"
+            android:text="Wordbook info"
             android:id="@+id/textView2" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:gravity="center"
             >
 
             <Button
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:text="Flashcards"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:onClick="sendMessage"
-                android:background="@drawable/button_2"
-                android:layout_weight="1"
+                android:background="@drawable/button_circle"
+                android:drawableTop="@drawable/ic_note_black_36dp"
                 android:id="@+id/button_flashcard"
                 android:layout_marginRight="20dp"/>
 
             <Button
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:text="Learn"
-                android:background="@drawable/button_2"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:background="@drawable/button_circle"
+                android:drawableTop="@drawable/ic_done_black_36dp"
                 android:onClick="sendMessage1"
-                android:layout_weight="1"
                 android:id="@+id/button_learn"
                 android:layout_gravity="center"
                 android:layout_marginRight="20dp" />
 
             <Button
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="Multiple"
-                android:background="@drawable/button_2"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:background="@drawable/button_circle"
+                android:drawableTop="@drawable/ic_done_all_black_36dp"
                 android:onClick="sendMessage2"
                 android:id="@+id/button_multiple"
                 android:layout_gravity="right" />
-
-
         </LinearLayout>
+
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:background="#FFFF2F79">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Term"
+                    android:textColor="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="2dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="Definition"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="16dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:id="@+id/count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:paddingRight="8dp"
+                    android:text=""
+                    android:gravity="center_vertical|right"
+                    />
+
+            </LinearLayout>
+        </LinearLayout>
+
 
         <ListView
             android:id="@+id/listView"
@@ -93,7 +152,5 @@
             android:layout_gravity="center"
             android:layout_height="fill_parent" >
         </ListView>
-
-        </LinearLayout>
-
-</LinearLayout> 
+    </LinearLayout>
+</LinearLayout>
