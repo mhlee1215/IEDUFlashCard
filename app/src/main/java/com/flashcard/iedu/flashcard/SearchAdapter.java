@@ -52,6 +52,9 @@ public class SearchAdapter extends BaseAdapter{
         TextView viewMain =(TextView) rowView.findViewById(R.id.textViewMain);
         viewMain.setText(this.wordbookList.get(position).getName());
 
+        TextView viewCount =(TextView) rowView.findViewById(R.id.textViewCount);
+        viewCount.setText(this.wordbookList.get(position).getSize()+"");
+
 
         rowView.setOnClickListener(new OnClickListener() {
             @Override

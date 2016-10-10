@@ -42,22 +42,6 @@
                 style="@style/text_view_button2"
                 android:text="999"/>
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="right"
-            android:orientation="horizontal"
-            >
-            <Button
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_marginRight="20dp"
-                android:background="@drawable/button_heart"
-                android:id="@+id/button_favorite"/>
-        </LinearLayout>
-
     </LinearLayout>
 
 

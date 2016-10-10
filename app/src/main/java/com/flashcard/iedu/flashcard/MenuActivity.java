@@ -1,6 +1,5 @@
 package com.flashcard.iedu.flashcard;
 
-import android.app.SearchManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -10,25 +9,19 @@ import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.flashcard.iedu.flashcard.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import edu.iedu.flashcard.dao.domain.WordBook;
 import edu.iedu.flashcard.service.WordBookService;
-import edu.iedu.flashcard.service.WordService;
-
 
 
 /**
@@ -115,7 +108,7 @@ public class MenuActivity extends AppCompatActivity {
                 context.startActivity(searchActivity);
                 return true;
             case R.id.action_add:
-                Intent wordbookEditActivity = new Intent(context, WordbookEditActivity.class);
+                Intent wordbookEditActivity = new Intent(context, WordBookEditActivity.class);
                 context.startActivity(wordbookEditActivity);
                 return true;
             case R.id.action_setting:

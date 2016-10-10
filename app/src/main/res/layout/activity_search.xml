@@ -25,7 +25,7 @@
         android:orientation="horizontal"
         >
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/query_text"
             android:layout_width="112dp"
             android:layout_height="wrap_content"
             android:inputType="textCapCharacters"
@@ -43,8 +43,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:background="@drawable/ic_search_black_48dp"
-                android:onClick="sendMessage2"
-                android:id="@+id/button7" />
+                android:id="@+id/btn_search" />
         </LinearLayout>
     </LinearLayout>
     <ListView

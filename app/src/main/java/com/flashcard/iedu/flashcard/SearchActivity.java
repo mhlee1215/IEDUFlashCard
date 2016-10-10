@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import edu.iedu.flashcard.dao.domain.WordBook;
+import edu.iedu.flashcard.service.WordBookService;
 
 
 public class SearchActivity extends AppCompatActivity {
@@ -52,22 +55,37 @@ public class SearchActivity extends AppCompatActivity {
 
         getWordBooks();
 
+        Button btnSearch = (Button)this.findViewById(R.id.btn_search);
+        btnSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditText searchQuery = (EditText) findViewById(R.id.query_text);
+                List<WordBook> wbList = WordBookService.searchWordBooks(searchQuery.getText().toString());
+                System.out.println(wbList);
+                wordbookList.clear();
+                wordbookList.addAll(wbList);
+                adapter.notifyDataSetChanged();
+            }
+        });
+
+
     }
 
-    public void sendMessage(View view) {
-        TextView viewMain = (TextView) view.findViewById(R.id.textViewMain);
-        Toast.makeText(context, "You Clicked latest ", Toast.LENGTH_LONG).show();
-    }
+//    public void sendMessage(View view) {
+//        TextView viewMain = (TextView) view.findViewById(R.id.textViewMain);
+//        Toast.makeText(context, "You Clicked latest ", Toast.LENGTH_LONG).show();
+//    }
+//
+//    public void sendMessage1(View view) {
+//        TextView viewMain = (TextView) view.findViewById(R.id.textViewMain);
+//        Toast.makeText(context, "You clicked set", Toast.LENGTH_LONG).show();
+//    }
+//
+//    public void sendMessage2(View view) {
+//        TextView viewMain = (TextView) view.findViewById(R.id.textViewMain);
+//        Toast.makeText(context, "You clicked class", Toast.LENGTH_LONG).show();
+//    }
 
-    public void sendMessage1(View view) {
-        TextView viewMain = (TextView) view.findViewById(R.id.textViewMain);
-        Toast.makeText(context, "You clicked set", Toast.LENGTH_LONG).show();
-    }
-
-    public void sendMessage2(View view) {
-        TextView viewMain = (TextView) view.findViewById(R.id.textViewMain);
-        Toast.makeText(context, "You clicked class", Toast.LENGTH_LONG).show();
-    }
     public void getWordBooks () {
         Connection conn = new Connection();
         conn.doInBackground(1);
