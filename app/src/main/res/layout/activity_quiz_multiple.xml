@@ -46,7 +46,7 @@
         android:gravity="top|center_horizontal"
         >
 
-        <Button
+        <!--<Button
             android:id="@+id/mc_button_submit"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
@@ -56,6 +56,7 @@
             android:background="@drawable/button_2"
             android:text="Submit"
             />
+            -->
         <Button
             android:id="@+id/mc_button_skip"
             android:layout_width="wrap_content"
@@ -64,6 +65,27 @@
             android:textSize="18dp"
             android:background="@drawable/button_2"
             android:text="Skip"
+            />
+        <Button
+            android:id="@+id/mc_button_again"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:padding="5dp"
+            android:layout_marginRight="40dp"
+            android:textSize="18dp"
+            android:visibility="gone"
+            android:background="@drawable/button_2"
+            android:text="Try Again"
+            />
+        <Button
+            android:id="@+id/mc_button_done"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:padding="5dp"
+            android:visibility="gone"
+            android:textSize="18dp"
+            android:background="@drawable/button_2"
+            android:text="Done"
             />
     </LinearLayout>
 

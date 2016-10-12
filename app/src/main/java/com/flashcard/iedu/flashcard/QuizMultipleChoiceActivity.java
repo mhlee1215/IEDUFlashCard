@@ -33,6 +33,9 @@ public class QuizMultipleChoiceActivity extends AppCompatActivity {
     List<WordQuizMultiple> quizList = null;
     int wordbookId;
 
+    int correctNum;
+    int wrongNum;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -80,24 +83,64 @@ public class QuizMultipleChoiceActivity extends AppCompatActivity {
 
 
 
-        Button btn_submit = (Button)findViewById(R.id.mc_button_submit);
-        btn_submit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-               // changeFragment("123");
-            }
-        });
+//        Button btn_submit = (Button)findViewById(R.id.mc_button_submit);
+//        btn_submit.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//               // changeFragment("123");
+//            }
+//        });
 
         Button btn_skip = (Button)findViewById(R.id.mc_button_skip);
         btn_skip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
               //  changeFragment("123");
+                skipQuiz();
             }
         });
+
+        Button btn_again = (Button)findViewById(R.id.mc_button_again);
+        btn_again.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Button btnSkip = (Button)findViewById(R.id.mc_button_skip);
+                btnSkip.setVisibility(View.VISIBLE);
+
+                Button btnAgain = (Button)findViewById(R.id.mc_button_again);
+                btnAgain.setVisibility(View.GONE);
+                Button btnDone = (Button)findViewById(R.id.mc_button_done);
+                btnDone.setVisibility(View.GONE);
+
+                startOver();
+            }
+        });
+
+        Button btn_done = (Button)findViewById(R.id.mc_button_done);
+        btn_done.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
+    }
+
+    public void skipQuiz(){
+        submitAnswer(-1);
+    }
+
+    public void startOver(){
+        curProgress = 0;
+        ProgressBar pb = (ProgressBar)findViewById(R.id.mc_progressBar);
+        pb.setProgress(curProgress);
+        getWords(wordbookId);
     }
 
     public void startQuiz(List<Word> words){
+        correctNum = 0;
+        wrongNum = 0;
+
         quizList = genQuiz(words, maxQuiz, 4);
         System.out.println("quizList:"+quizList);
         QuizMuiltipleChoiceFragment fQuiz = new QuizMuiltipleChoiceFragment();
@@ -197,23 +240,49 @@ public class QuizMultipleChoiceActivity extends AppCompatActivity {
         //check answer here.
         if(quizList.get(curProgress-1).getAnswer() == answer){
             System.out.println("correct!");
-        }else{
+            correctNum++;
+        }else if(answer != -1){
             System.out.println("wrong!");
+            wrongNum++;
+        }else{
+            System.out.println("Skip!");
         }
+
+
+
 
         FragmentTransaction ft = getFragmentManager().beginTransaction();
         ft.setCustomAnimations(R.animator.slide_in_right, R.animator.slide_out_left);
 
-        QuizMuiltipleChoiceFragment fQuiz = new QuizMuiltipleChoiceFragment();
-        fQuiz.setQuiz(quizList.get(curProgress));
-        curProgress++;
+        if(quizList.size() > curProgress) {
+            QuizMuiltipleChoiceFragment fQuiz = new QuizMuiltipleChoiceFragment();
+            fQuiz.setQuiz(quizList.get(curProgress));
+            curProgress++;
 
-        ft.replace(R.id.fragment_mc_container, fQuiz);
+            ft.replace(R.id.fragment_mc_container, fQuiz);
 
-        ProgressBar pb = (ProgressBar)findViewById(R.id.mc_progressBar);
-        pb.setProgress(curProgress * 100 / maxQuiz);
+            ProgressBar pb = (ProgressBar) findViewById(R.id.mc_progressBar);
+            pb.setProgress(curProgress * 100 / maxQuiz);
+        }else{
 
-// Start the animated transition.
+            QuizMuiltipleChoiceResultFragment fQuizResult = new QuizMuiltipleChoiceResultFragment();
+            fQuizResult.setResults(this.correctNum, this.wrongNum);
+            ft.replace(R.id.fragment_mc_container, fQuizResult);
+
+            ProgressBar pb = (ProgressBar) findViewById(R.id.mc_progressBar);
+            pb.setProgress(100);
+
+
+//            Button btnSubmit = (Button)findViewById(R.id.mc_button_submit);
+//            btnSubmit.setVisibility(View.GONE);
+            Button btnSkip = (Button)findViewById(R.id.mc_button_skip);
+            btnSkip.setVisibility(View.GONE);
+
+            Button btnAgain = (Button)findViewById(R.id.mc_button_again);
+            btnAgain.setVisibility(View.VISIBLE);
+            Button btnDone = (Button)findViewById(R.id.mc_button_done);
+            btnDone.setVisibility(View.VISIBLE);
+        }
         ft.commit();
     }
 

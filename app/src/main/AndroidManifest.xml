@@ -126,7 +126,7 @@
         <activity android:name=".WordEditActivity" />
         <activity android:name=".WordBookEditActivity" />
         <activity android:name=".samples.SwipeListView.ListViewExample" />
-        <activity android:name=".WordBookInfoActivity"></activity>
+        <activity android:name=".WordBookInfoActivity" />
     </application>
 
 </manifest>
