@@ -8,8 +8,8 @@ android {
         applicationId "com.flashcard.iedu.flashcard"
         minSdkVersion 19
         targetSdkVersion 23
-        versionCode 3
-        versionName "1.02"
+        versionCode 4
+        versionName "1.05"
     }
     buildTypes {
         release {
