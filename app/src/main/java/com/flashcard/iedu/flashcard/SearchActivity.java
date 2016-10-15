@@ -47,6 +47,7 @@ public class SearchActivity extends AppCompatActivity {
 
         context = this;
 
+        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         wordbookList = new ArrayList<WordBook>();
 
         lv = (ListView) findViewById(R.id.ListView);
@@ -96,12 +97,26 @@ public class SearchActivity extends AppCompatActivity {
         protected Object doInBackground(Object... arg0) {
             int wordBookId = (Integer)arg0[0];
             //List<WordBook> test = WordService.getWordBookList(wordBookId);
-            List<WordBook> test = new ArrayList<WordBook>();
-            for (int i = 0; i < 30; i++) {
-                test.add(new WordBook("dummy wordbook_" + i));
+//            List<WordBook> test = new ArrayList<WordBook>();
+//            for (int i = 0; i < 30; i++) {
+//                test.add(new WordBook("dummy wordbook_" + i));
+//
+//            }
+            System.out.println("start remove zero size!");
+            List<WordBook> wbList = WordBookService.searchWordBooks("");
+            for (int i = 0; i < wbList.size(); i++) {
+                if(wbList.get(i).getSize() == 0) {
+                    System.out.println("removed!");
+                    wbList.remove(i);
+                    i--;
+                }else{
+                    System.out.println(wbList.get(i).getName()+","+wbList.get(i).getSize());
+                }
 
             }
-            wordbookList.addAll(test);
+
+
+            wordbookList.addAll(wbList);
             adapter.notifyDataSetChanged();
             return null;
 

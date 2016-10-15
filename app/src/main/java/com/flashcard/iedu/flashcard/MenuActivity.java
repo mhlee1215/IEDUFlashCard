@@ -35,6 +35,7 @@ public class MenuActivity extends AppCompatActivity {
     ListView lv;
     List<WordBook> wordbookList;
     MenuAdapter adapter;
+    Integer userId;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu2);
@@ -64,7 +65,7 @@ public class MenuActivity extends AppCompatActivity {
         //WordBookService.getWordBookList(1);
 
 
-        Integer userId;
+
         SharedPreferences pref = getApplicationContext().getSharedPreferences("IEDUPref", 0); // 0 - for private mode
         userId = pref.getInt("USER_ID", -1);
         System.out.println("MENUACTIVITY_USERID:"+userId);
@@ -79,6 +80,12 @@ public class MenuActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        getWordBooks(userId);
     }
 
     @Override
@@ -173,7 +180,7 @@ public class MenuActivity extends AppCompatActivity {
             int userId = (Integer)arg0[0];
             List<WordBook> test = WordBookService.getWordBooks(userId);
 
-
+            wordbookList.clear();
             wordbookList.addAll(test);
             adapter.notifyDataSetChanged();
             return null;

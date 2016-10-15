@@ -1,6 +1,7 @@
 package com.flashcard.iedu.flashcard;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -45,7 +46,7 @@ public class SearchAdapter extends BaseAdapter{
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
 
         View rowView;
         rowView = inflater.inflate(R.layout.activity_menu_list_item, null);
@@ -60,8 +61,18 @@ public class SearchAdapter extends BaseAdapter{
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                TextView viewMain =(TextView) v.findViewById(R.id.textViewMain);
-                Toast.makeText(context, "You Clicked " + viewMain.getText(), Toast.LENGTH_LONG).show();
+//                TextView viewMain =(TextView) v.findViewById(R.id.textViewMain);
+//                Toast.makeText(context, "You Clicked " + viewMain.getText(), Toast.LENGTH_LONG).show();
+
+                Intent i = new Intent(context, WordBookInfoActivity.class);
+                TextView tv = (TextView)v.findViewById(R.id.textViewMain);
+
+                i.putExtra("WORDBOOK_NAME",tv.getText());
+                //wordbookList.get(v.get)
+                //wordbookList.get(position);
+                i.putExtra("WORDBOOK_ID", wordbookList.get(position).getId());
+                v.getContext().startActivity(i);
+
             }
         });
         return rowView;

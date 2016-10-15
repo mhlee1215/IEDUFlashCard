@@ -80,7 +80,7 @@ public class MenuAdapter extends BaseSwipeAdapter {
 
         final Button btnFavorite = (Button) convertView.findViewById(R.id.button_favorite);
 
-        System.out.println("isfavorite:"+wordbookList.get(position).getIsfavorite());
+        //System.out.println("isfavorite:"+wordbookList.get(position).getIsfavorite());
         if("Y".equalsIgnoreCase(wordbookList.get(position).getIsfavorite())){
             btnFavorite.setBackground(context.getResources().getDrawable(R.drawable.ic_favorite_black_48dp));
         }
@@ -200,7 +200,7 @@ public class MenuAdapter extends BaseSwipeAdapter {
 
 //        final Button btnFavorite = (Button) rowView.findViewById(R.id.button_favorite);
 
-        System.out.println("isfavorite:"+wordbookList.get(position).getIsfavorite());
+       // System.out.println("isfavorite:"+wordbookList.get(position).getIsfavorite());
         if("Y".equalsIgnoreCase(wordbookList.get(position).getIsfavorite())){
             btnFavorite.setBackground(context.getResources().getDrawable(R.drawable.ic_favorite_black_48dp));
         }

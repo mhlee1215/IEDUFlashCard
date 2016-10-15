@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,14 +24,19 @@ public class WordBookListAdapter extends BaseAdapter {
     //List<String> mainColumn;
     //List<String> subColumn1;
     List<Word> cardList;
+    boolean isShowFavorite;
     private static LayoutInflater inflater=null;
 
     public WordBookListAdapter(Context context, List<Word> cardList){
         this.context = context;
         this.cardList = cardList;
-
+        isShowFavorite = true;
         inflater = ( LayoutInflater )context.
                 getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+    }
+
+    public void showFavorite(boolean isShowFavorite){
+        this.isShowFavorite = isShowFavorite;
     }
 
     @Override
@@ -54,6 +61,13 @@ public class WordBookListAdapter extends BaseAdapter {
         rowView = inflater.inflate(R.layout.activity_wordbook_list_item, null);
         TextView viewMain =(TextView) rowView.findViewById(R.id.textViewMain);
         TextView viewSub1 =(TextView) rowView.findViewById(R.id.textViewSub1);
+        Button btnFavorite =(Button) rowView.findViewById(R.id.isFavorite);
+
+        if(!isShowFavorite){
+            LinearLayout btnFavoriteLayout =(LinearLayout) rowView.findViewById(R.id.isFavoriteLayout);
+            btnFavoriteLayout.setVisibility(View.GONE);
+        }
+
         viewMain.setText(this.cardList.get(position).getName());
         viewSub1.setText(this.cardList.get(position).getMeaning());
 
