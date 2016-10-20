@@ -134,6 +134,12 @@ public class WordBookListActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        getWords(wordbookId);
+    }
+
 
 
 
@@ -209,6 +215,8 @@ public class WordBookListActivity extends AppCompatActivity {
         protected Object doInBackground(Object... arg0) {
             int wordBookId = (Integer) arg0[0];
             List<Word> test = WordService.getWordList(wordBookId);
+
+            wordList.clear();
             wordList.addAll(test);
             adapter.notifyDataSetChanged();
             return null;
@@ -223,6 +231,7 @@ public class WordBookListActivity extends AppCompatActivity {
                 return true;
             case R.id.action_add:
                 Intent wordEditActivity = new Intent(context, WordEditActivity.class);
+                wordEditActivity.putExtra("WORDBOOK_ID",wordbookId);
                 context.startActivity(wordEditActivity);
                 return true;
 //            case R.id.action_info:

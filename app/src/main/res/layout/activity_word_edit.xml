@@ -34,6 +34,7 @@
             android:text="Word"
             />
         <EditText
+            android:id="@+id/wd_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             />
@@ -44,6 +45,7 @@
             android:text="meaning"
             />
         <EditText
+            android:id="@+id/wd_meaning"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             />
@@ -57,7 +59,9 @@
             />
 
         <EditText
+            android:id="@+id/wd_add_string"
             android:layout_width="match_parent"
+            android:enabled="false"
             android:layout_height="50dp" />
 
         <Button
